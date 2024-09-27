@@ -1,0 +1,184 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Marti\\OneDrive\\Documenten\\ICT\\S3.2\\S3DB01-Martijn-Verhappen-Individual-Project\\Web Shop API\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{9395828F-5670-44DC-B3FA-7D00E7CCEA6F}|Web Shop API\\Web Shop API.csproj|c:\\users\\marti\\onedrive\\documenten\\ict\\s3.2\\s3db01-martijn-verhappen-individual-project\\web shop api\\web shop api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9395828F-5670-44DC-B3FA-7D00E7CCEA6F}|Web Shop API\\Web Shop API.csproj|solutionrelative:web shop api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9395828F-5670-44DC-B3FA-7D00E7CCEA6F}|Web Shop API\\Web Shop API.csproj|c:\\users\\marti\\onedrive\\documenten\\ict\\s3.2\\s3db01-martijn-verhappen-individual-project\\web shop api\\web shop api\\controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9395828F-5670-44DC-B3FA-7D00E7CCEA6F}|Web Shop API\\Web Shop API.csproj|solutionrelative:web shop api\\controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9395828F-5670-44DC-B3FA-7D00E7CCEA6F}|Web Shop API\\Web Shop API.csproj|c:\\users\\marti\\onedrive\\documenten\\ict\\s3.2\\s3db01-martijn-verhappen-individual-project\\web shop api\\web shop api\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9395828F-5670-44DC-B3FA-7D00E7CCEA6F}|Web Shop API\\Web Shop API.csproj|solutionrelative:web shop api\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9395828F-5670-44DC-B3FA-7D00E7CCEA6F}|Web Shop API\\Web Shop API.csproj|c:\\users\\marti\\onedrive\\documenten\\ict\\s3.2\\s3db01-martijn-verhappen-individual-project\\web shop api\\web shop api\\repositories\\productrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9395828F-5670-44DC-B3FA-7D00E7CCEA6F}|Web Shop API\\Web Shop API.csproj|solutionrelative:web shop api\\repositories\\productrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9395828F-5670-44DC-B3FA-7D00E7CCEA6F}|Web Shop API\\Web Shop API.csproj|c:\\users\\marti\\onedrive\\documenten\\ict\\s3.2\\s3db01-martijn-verhappen-individual-project\\web shop api\\web shop api\\services\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9395828F-5670-44DC-B3FA-7D00E7CCEA6F}|Web Shop API\\Web Shop API.csproj|solutionrelative:web shop api\\services\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9395828F-5670-44DC-B3FA-7D00E7CCEA6F}|Web Shop API\\Web Shop API.csproj|c:\\users\\marti\\onedrive\\documenten\\ict\\s3.2\\s3db01-martijn-verhappen-individual-project\\web shop api\\web shop api\\entities\\productentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9395828F-5670-44DC-B3FA-7D00E7CCEA6F}|Web Shop API\\Web Shop API.csproj|solutionrelative:web shop api\\entities\\productentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9395828F-5670-44DC-B3FA-7D00E7CCEA6F}|Web Shop API\\Web Shop API.csproj|c:\\users\\marti\\onedrive\\documenten\\ict\\s3.2\\s3db01-martijn-verhappen-individual-project\\web shop api\\web shop api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{9395828F-5670-44DC-B3FA-7D00E7CCEA6F}|Web Shop API\\Web Shop API.csproj|solutionrelative:web shop api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9395828F-5670-44DC-B3FA-7D00E7CCEA6F}|Web Shop API\\Web Shop API.csproj|c:\\users\\marti\\onedrive\\documenten\\ict\\s3.2\\s3db01-martijn-verhappen-individual-project\\web shop api\\web shop api\\weatherforecast.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9395828F-5670-44DC-B3FA-7D00E7CCEA6F}|Web Shop API\\Web Shop API.csproj|solutionrelative:web shop api\\weatherforecast.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9395828F-5670-44DC-B3FA-7D00E7CCEA6F}|Web Shop API\\Web Shop API.csproj|c:\\users\\marti\\onedrive\\documenten\\ict\\s3.2\\s3db01-martijn-verhappen-individual-project\\web shop api\\web shop api\\irepositories\\iproductrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9395828F-5670-44DC-B3FA-7D00E7CCEA6F}|Web Shop API\\Web Shop API.csproj|solutionrelative:web shop api\\irepositories\\iproductrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 1,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedHeight": 304,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "WeatherForecastController.cs",
+              "DocumentMoniker": "C:\\Users\\Marti\\OneDrive\\Documenten\\ICT\\S3.2\\S3DB01-Martijn-Verhappen-Individual-Project\\Web Shop API\\Web Shop API\\Controllers\\WeatherForecastController.cs",
+              "RelativeDocumentMoniker": "Web Shop API\\Controllers\\WeatherForecastController.cs",
+              "ToolTip": "C:\\Users\\Marti\\OneDrive\\Documenten\\ICT\\S3.2\\S3DB01-Martijn-Verhappen-Individual-Project\\Web Shop API\\Web Shop API\\Controllers\\WeatherForecastController.cs",
+              "RelativeToolTip": "Web Shop API\\Controllers\\WeatherForecastController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-27T09:04:40.49Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ProductEntity.cs",
+              "DocumentMoniker": "C:\\Users\\Marti\\OneDrive\\Documenten\\ICT\\S3.2\\S3DB01-Martijn-Verhappen-Individual-Project\\Web Shop API\\Web Shop API\\Entities\\ProductEntity.cs",
+              "RelativeDocumentMoniker": "Web Shop API\\Entities\\ProductEntity.cs",
+              "ToolTip": "C:\\Users\\Marti\\OneDrive\\Documenten\\ICT\\S3.2\\S3DB01-Martijn-Verhappen-Individual-Project\\Web Shop API\\Web Shop API\\Entities\\ProductEntity.cs",
+              "RelativeToolTip": "Web Shop API\\Entities\\ProductEntity.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-26T08:22:48.653Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ProductController.cs",
+              "DocumentMoniker": "C:\\Users\\Marti\\OneDrive\\Documenten\\ICT\\S3.2\\S3DB01-Martijn-Verhappen-Individual-Project\\Web Shop API\\Web Shop API\\Controllers\\ProductController.cs",
+              "RelativeDocumentMoniker": "Web Shop API\\Controllers\\ProductController.cs",
+              "ToolTip": "C:\\Users\\Marti\\OneDrive\\Documenten\\ICT\\S3.2\\S3DB01-Martijn-Verhappen-Individual-Project\\Web Shop API\\Web Shop API\\Controllers\\ProductController.cs",
+              "RelativeToolTip": "Web Shop API\\Controllers\\ProductController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-25T08:24:26.102Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Marti\\OneDrive\\Documenten\\ICT\\S3.2\\S3DB01-Martijn-Verhappen-Individual-Project\\Web Shop API\\Web Shop API\\Program.cs",
+              "RelativeDocumentMoniker": "Web Shop API\\Program.cs",
+              "ToolTip": "C:\\Users\\Marti\\OneDrive\\Documenten\\ICT\\S3.2\\S3DB01-Martijn-Verhappen-Individual-Project\\Web Shop API\\Web Shop API\\Program.cs",
+              "RelativeToolTip": "Web Shop API\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-26T08:51:41.109Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ProductService.cs",
+              "DocumentMoniker": "C:\\Users\\Marti\\OneDrive\\Documenten\\ICT\\S3.2\\S3DB01-Martijn-Verhappen-Individual-Project\\Web Shop API\\Web Shop API\\Services\\ProductService.cs",
+              "RelativeDocumentMoniker": "Web Shop API\\Services\\ProductService.cs",
+              "ToolTip": "C:\\Users\\Marti\\OneDrive\\Documenten\\ICT\\S3.2\\S3DB01-Martijn-Verhappen-Individual-Project\\Web Shop API\\Web Shop API\\Services\\ProductService.cs",
+              "RelativeToolTip": "Web Shop API\\Services\\ProductService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-25T08:24:53.246Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ProductRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Marti\\OneDrive\\Documenten\\ICT\\S3.2\\S3DB01-Martijn-Verhappen-Individual-Project\\Web Shop API\\Web Shop API\\Repositories\\ProductRepository.cs",
+              "RelativeDocumentMoniker": "Web Shop API\\Repositories\\ProductRepository.cs",
+              "ToolTip": "C:\\Users\\Marti\\OneDrive\\Documenten\\ICT\\S3.2\\S3DB01-Martijn-Verhappen-Individual-Project\\Web Shop API\\Web Shop API\\Repositories\\ProductRepository.cs",
+              "RelativeToolTip": "Web Shop API\\Repositories\\ProductRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-25T08:24:41.828Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "IProductRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Marti\\OneDrive\\Documenten\\ICT\\S3.2\\S3DB01-Martijn-Verhappen-Individual-Project\\Web Shop API\\Web Shop API\\IRepositories\\IProductRepository.cs",
+              "RelativeDocumentMoniker": "Web Shop API\\IRepositories\\IProductRepository.cs",
+              "ToolTip": "C:\\Users\\Marti\\OneDrive\\Documenten\\ICT\\S3.2\\S3DB01-Martijn-Verhappen-Individual-Project\\Web Shop API\\Web Shop API\\IRepositories\\IProductRepository.cs",
+              "RelativeToolTip": "Web Shop API\\IRepositories\\IProductRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-26T08:23:02.652Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\Marti\\OneDrive\\Documenten\\ICT\\S3.2\\S3DB01-Martijn-Verhappen-Individual-Project\\Web Shop API\\Web Shop API\\appsettings.json",
+              "RelativeDocumentMoniker": "Web Shop API\\appsettings.json",
+              "ToolTip": "C:\\Users\\Marti\\OneDrive\\Documenten\\ICT\\S3.2\\S3DB01-Martijn-Verhappen-Individual-Project\\Web Shop API\\Web Shop API\\appsettings.json",
+              "RelativeToolTip": "Web Shop API\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-09-26T08:45:03.587Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "WeatherForecast.cs",
+              "DocumentMoniker": "C:\\Users\\Marti\\OneDrive\\Documenten\\ICT\\S3.2\\S3DB01-Martijn-Verhappen-Individual-Project\\Web Shop API\\Web Shop API\\WeatherForecast.cs",
+              "RelativeDocumentMoniker": "Web Shop API\\WeatherForecast.cs",
+              "ToolTip": "C:\\Users\\Marti\\OneDrive\\Documenten\\ICT\\S3.2\\S3DB01-Martijn-Verhappen-Individual-Project\\Web Shop API\\Web Shop API\\WeatherForecast.cs",
+              "RelativeToolTip": "Web Shop API\\WeatherForecast.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-26T08:57:10.872Z"
+            }
+          ]
+        },
+        {
+          "DockedHeight": 76,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
