@@ -58,3 +58,9 @@ C:\Users\Marti\OneDrive\Documenten\ICT\S3.2\S3DB01-Martijn-Verhappen-Individual-
 C:\Users\Marti\OneDrive\Documenten\ICT\S3.2\S3DB01-Martijn-Verhappen-Individual-Project\Web Shop API\Web Shop API\obj\Debug\net8.0\Web Shop API.pdb
 C:\Users\Marti\OneDrive\Documenten\ICT\S3.2\S3DB01-Martijn-Verhappen-Individual-Project\Web Shop API\Web Shop API\obj\Debug\net8.0\Web Shop API.genruntimeconfig.cache
 C:\Users\Marti\OneDrive\Documenten\ICT\S3.2\S3DB01-Martijn-Verhappen-Individual-Project\Web Shop API\Web Shop API\obj\Debug\net8.0\ref\Web Shop API.dll
+C:\Users\Marti\OneDrive\Documenten\ICT\S3.2\S3DB01-Martijn-Verhappen-Individual-Project\Web Shop API\Web Shop API\bin\Debug\net8.0\System.Web.Cors.dll
+C:\Users\Marti\OneDrive\Documenten\ICT\S3.2\S3DB01-Martijn-Verhappen-Individual-Project\Web Shop API\Web Shop API\bin\Debug\net8.0\System.Net.Http.Formatting.dll
+C:\Users\Marti\OneDrive\Documenten\ICT\S3.2\S3DB01-Martijn-Verhappen-Individual-Project\Web Shop API\Web Shop API\bin\Debug\net8.0\System.Web.Http.dll
+C:\Users\Marti\OneDrive\Documenten\ICT\S3.2\S3DB01-Martijn-Verhappen-Individual-Project\Web Shop API\Web Shop API\bin\Debug\net8.0\System.Web.Http.Cors.dll
+C:\Users\Marti\OneDrive\Documenten\ICT\S3.2\S3DB01-Martijn-Verhappen-Individual-Project\Web Shop API\Web Shop API\bin\Debug\net8.0\Newtonsoft.Json.dll
+C:\Users\Marti\OneDrive\Documenten\ICT\S3.2\S3DB01-Martijn-Verhappen-Individual-Project\Web Shop API\Web Shop API\bin\Debug\net8.0\Newtonsoft.Json.Bson.dll

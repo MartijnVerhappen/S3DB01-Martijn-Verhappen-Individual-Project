@@ -6,11 +6,25 @@ using Microsoft.EntityFrameworkCore;
 using Logic.IServices;
 using Logic.Services;
 
+var AllowTauriOrigin = "AllowTauriOrigin";
+
 var builder = WebApplication.CreateBuilder(args);
+
 
 // Add services to the container.
 
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(name: AllowTauriOrigin,
+                      policy =>
+                      {
+                          policy.WithOrigins("http://localhost", "http://127.0.0.1", "http://localhost:1420")
+                                .AllowAnyHeader()
+                                .AllowAnyMethod();  // Allow specific HTTP methods like GET, POST, etc.
+                      });
+});
 
 builder.Services.AddDbContext<DBContext>(options =>
     options.UseMySql(
@@ -32,6 +46,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseCors(AllowTauriOrigin);
 
 app.UseHttpsRedirection();
 
