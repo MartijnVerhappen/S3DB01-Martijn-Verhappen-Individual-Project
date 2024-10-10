@@ -91,7 +91,7 @@
               "RelativeDocumentMoniker": "unitTests\\ControllerTests\\ProductControllerTest.cs",
               "ToolTip": "C:\\Users\\Marti\\OneDrive\\Documenten\\ICT\\S3.2\\S3DB01-Martijn-Verhappen-Individual-Project\\Web Shop API\\unitTests\\ControllerTests\\ProductControllerTest.cs",
               "RelativeToolTip": "unitTests\\ControllerTests\\ProductControllerTest.cs",
-              "ViewState": "AgIAABEAAAAAAAAAAAAQwBcAAABMAAAAAAAAAA==",
+              "ViewState": "AgIAABEAAAAAAAAAAAAQwBIAAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-10T08:16:00.087Z",
               "EditorCaption": ""
@@ -106,8 +106,7 @@
               "RelativeToolTip": "unitTests\\ServiceTests\\ProductServiceTest.cs",
               "ViewState": "AgIAAA4AAAAAAAAAAAAAwCAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-10T08:06:48.723Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-10T08:06:48.723Z"
             },
             {
               "$type": "Document",
@@ -119,8 +118,7 @@
               "RelativeToolTip": "unitTests\\RepositoryTests\\ProductRepositoryTest.cs",
               "ViewState": "AgIAAAkAAAAAAAAAAAAAAB8AAABAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-09T08:38:01.136Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-09T08:38:01.136Z"
             },
             {
               "$type": "Document",
@@ -132,8 +130,7 @@
               "RelativeToolTip": "DAL\\Repositories\\ProductRepository.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAABMAAAA4AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-02T07:22:28.182Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-02T07:22:28.182Z"
             },
             {
               "$type": "Document",
@@ -169,8 +166,7 @@
               "RelativeToolTip": "DAL\\DBContext.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAABAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-02T07:12:32.089Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-02T07:12:32.089Z"
             },
             {
               "$type": "Document",
@@ -182,8 +178,7 @@
               "RelativeToolTip": "Logic\\Services\\ProductService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-02T07:16:51.043Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-02T07:16:51.043Z"
             },
             {
               "$type": "Document",

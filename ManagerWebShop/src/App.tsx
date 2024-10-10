@@ -1,4 +1,5 @@
 import { useState } from "react";
+import axios from "axios";
 import "./App.css";
 
 function App() {
@@ -9,23 +10,13 @@ function App() {
   const callApi = async () => {
     try {
       const apiUrl = "http://localhost:5000/Product";
-      const getAllResponse = await fetch(apiUrl, {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
-  
-      if (!getAllResponse.ok) {
-        throw new Error(`HTTP error! status: ${getAllResponse.status}`);
-      }
-  
-      const productsResponse = await getAllResponse.json();
-      setResponseData(productsResponse); // Directly set the response data
+      const getAllResponse = await axios.get(apiUrl);
+
+      setResponseData(getAllResponse.data);
   
     } catch (error) {
-      if (error instanceof Error) {
-        setError(error.message);
+      if (axios.isAxiosError(error)) {
+        setError(error.message); // Handle Axios error
       } else {
         setError("An unknown error occurred");
       }
