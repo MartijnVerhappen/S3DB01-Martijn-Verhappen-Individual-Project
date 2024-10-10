@@ -5,7 +5,7 @@ namespace DAL
 {
     public class DBContext : DbContext
     {
-        public DbSet<ProductModel> Product { get; set; }
+        public virtual DbSet<ProductModel> Product { get; set; }
 
         public DBContext(DbContextOptions<DBContext> options) : base(options)
         {

@@ -1,0 +1,25 @@
+C:\Users\Marti\OneDrive\Documenten\ICT\S3.2\S3DB01-Martijn-Verhappen-Individual-Project\Web Shop API\Tests\bin\Debug\net8.0\Web Shop API.deps.json
+C:\Users\Marti\OneDrive\Documenten\ICT\S3.2\S3DB01-Martijn-Verhappen-Individual-Project\Web Shop API\Tests\bin\Debug\net8.0\Web Shop API.runtimeconfig.json
+C:\Users\Marti\OneDrive\Documenten\ICT\S3.2\S3DB01-Martijn-Verhappen-Individual-Project\Web Shop API\Tests\bin\Debug\net8.0\appsettings.Development.json
+C:\Users\Marti\OneDrive\Documenten\ICT\S3.2\S3DB01-Martijn-Verhappen-Individual-Project\Web Shop API\Tests\bin\Debug\net8.0\appsettings.json
+C:\Users\Marti\OneDrive\Documenten\ICT\S3.2\S3DB01-Martijn-Verhappen-Individual-Project\Web Shop API\Tests\bin\Debug\net8.0\Web Shop API.exe
+C:\Users\Marti\OneDrive\Documenten\ICT\S3.2\S3DB01-Martijn-Verhappen-Individual-Project\Web Shop API\Tests\bin\Debug\net8.0\Tests.deps.json
+C:\Users\Marti\OneDrive\Documenten\ICT\S3.2\S3DB01-Martijn-Verhappen-Individual-Project\Web Shop API\Tests\bin\Debug\net8.0\Tests.dll
+C:\Users\Marti\OneDrive\Documenten\ICT\S3.2\S3DB01-Martijn-Verhappen-Individual-Project\Web Shop API\Tests\bin\Debug\net8.0\Tests.pdb
+C:\Users\Marti\OneDrive\Documenten\ICT\S3.2\S3DB01-Martijn-Verhappen-Individual-Project\Web Shop API\Tests\bin\Debug\net8.0\DAL.dll
+C:\Users\Marti\OneDrive\Documenten\ICT\S3.2\S3DB01-Martijn-Verhappen-Individual-Project\Web Shop API\Tests\bin\Debug\net8.0\Logic.dll
+C:\Users\Marti\OneDrive\Documenten\ICT\S3.2\S3DB01-Martijn-Verhappen-Individual-Project\Web Shop API\Tests\bin\Debug\net8.0\Web Shop API.dll
+C:\Users\Marti\OneDrive\Documenten\ICT\S3.2\S3DB01-Martijn-Verhappen-Individual-Project\Web Shop API\Tests\bin\Debug\net8.0\DAL.pdb
+C:\Users\Marti\OneDrive\Documenten\ICT\S3.2\S3DB01-Martijn-Verhappen-Individual-Project\Web Shop API\Tests\bin\Debug\net8.0\Logic.pdb
+C:\Users\Marti\OneDrive\Documenten\ICT\S3.2\S3DB01-Martijn-Verhappen-Individual-Project\Web Shop API\Tests\bin\Debug\net8.0\Web Shop API.pdb
+C:\Users\Marti\OneDrive\Documenten\ICT\S3.2\S3DB01-Martijn-Verhappen-Individual-Project\Web Shop API\Tests\obj\Debug\net8.0\Tests.csproj.AssemblyReference.cache
+C:\Users\Marti\OneDrive\Documenten\ICT\S3.2\S3DB01-Martijn-Verhappen-Individual-Project\Web Shop API\Tests\obj\Debug\net8.0\Tests.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Marti\OneDrive\Documenten\ICT\S3.2\S3DB01-Martijn-Verhappen-Individual-Project\Web Shop API\Tests\obj\Debug\net8.0\Tests.AssemblyInfoInputs.cache
+C:\Users\Marti\OneDrive\Documenten\ICT\S3.2\S3DB01-Martijn-Verhappen-Individual-Project\Web Shop API\Tests\obj\Debug\net8.0\Tests.AssemblyInfo.cs
+C:\Users\Marti\OneDrive\Documenten\ICT\S3.2\S3DB01-Martijn-Verhappen-Individual-Project\Web Shop API\Tests\obj\Debug\net8.0\Tests.csproj.CoreCompileInputs.cache
+C:\Users\Marti\OneDrive\Documenten\ICT\S3.2\S3DB01-Martijn-Verhappen-Individual-Project\Web Shop API\Tests\obj\Debug\net8.0\Tests.sourcelink.json
+C:\Users\Marti\OneDrive\Documenten\ICT\S3.2\S3DB01-Martijn-Verhappen-Individual-Project\Web Shop API\Tests\obj\Debug\net8.0\Tests.csproj.Up2Date
+C:\Users\Marti\OneDrive\Documenten\ICT\S3.2\S3DB01-Martijn-Verhappen-Individual-Project\Web Shop API\Tests\obj\Debug\net8.0\Tests.dll
+C:\Users\Marti\OneDrive\Documenten\ICT\S3.2\S3DB01-Martijn-Verhappen-Individual-Project\Web Shop API\Tests\obj\Debug\net8.0\refint\Tests.dll
+C:\Users\Marti\OneDrive\Documenten\ICT\S3.2\S3DB01-Martijn-Verhappen-Individual-Project\Web Shop API\Tests\obj\Debug\net8.0\Tests.pdb
+C:\Users\Marti\OneDrive\Documenten\ICT\S3.2\S3DB01-Martijn-Verhappen-Individual-Project\Web Shop API\Tests\obj\Debug\net8.0\ref\Tests.dll

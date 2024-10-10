@@ -1,26 +1,9 @@
 import { useState } from "react";
 import "./App.css";
 
-
-
 function App() {
-  const [responseData, setResponseData] = useState<Product | null>(null);
+  const [responseData, setResponseData] = useState<Product[]>([]);
   const [error, setError] = useState<string | null>(null);
-
-  // function to transform called data into something more usable
-  const transformProductData = (data: Product) => {
-    return {
-      Id: data.Id,
-
-      ProductType: data.ProductType,
-
-      ProductNaam: data.ProductNaam,
-
-      ProductPrijs: data.ProductPrijs,
-
-      ProductKorting: data.ProductKorting
-    };
-};
 
   // Function to call the API
   const callApi = async () => {
@@ -37,28 +20,26 @@ function App() {
         throw new Error(`HTTP error! status: ${getAllResponse.status}`);
       }
   
-      const { Success, Data } = await getAllResponse.json();
-      if (Success) {
-          const formattedData = transformProductData(Data); // Transform the data
-          setResponseData(formattedData);
-      }
-      
+      const productsResponse = await getAllResponse.json();
+      setResponseData(productsResponse); // Directly set the response data
+  
     } catch (error) {
-      // Check if error is apart of ErrorConstructor
       if (error instanceof Error) {
-        setError(error.message); // show error message
+        setError(error.message);
       } else {
-        setError("An unknown error occurred"); // catchall
+        setError("An unknown error occurred");
       }
     }
   };
+  
+  
 
   return (
     <div className="container">
       <h1>Welcome to the online web shop!</h1>
-
+  
       <div className="row"></div>
-
+  
       <form
         onSubmit={(e) => {
           e.preventDefault(); // Prevent the form from refreshing the page
@@ -67,13 +48,28 @@ function App() {
       >
         <button type="submit">Call API</button>
       </form>
-
-      {/* Display API response or error */}
-      <p>{responseData ? JSON.stringify(responseData) : "No data yet"}</p>
+  
+      {/* Display API response */}
+      {responseData && responseData.length > 0 ? (
+        <ul>
+          {responseData.map((product: Product) => (
+            <li key={product.id}>
+              <p>Product Name: {product.productNaam}</p>
+              <p>Product Type: {product.productType}</p>
+              <p>Price: ${product.productPrijs}</p>
+              <p>Discount: %{product.productKorting}</p>
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <p>No data yet</p>
+      )}
+  
+      {/* Display error message */}
       {error && <p>Error: {error}</p>}
     </div>
   );
+  
 }
 
 export default App;
-

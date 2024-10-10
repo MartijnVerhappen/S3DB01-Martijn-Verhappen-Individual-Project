@@ -5,9 +5,11 @@ VisualStudioVersion = 17.11.35312.102
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Web Shop API", "Web Shop API\Web Shop API.csproj", "{9395828F-5670-44DC-B3FA-7D00E7CCEA6F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "DAL\DAL.csproj", "{21EA436E-F1CB-4928-9B43-A6AC35DA977A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DAL", "DAL\DAL.csproj", "{21EA436E-F1CB-4928-9B43-A6AC35DA977A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logic", "Logic\Logic.csproj", "{4503EF7A-CD16-4217-8C57-236BB7E38C11}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Logic", "Logic\Logic.csproj", "{4503EF7A-CD16-4217-8C57-236BB7E38C11}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "unitTests", "unitTests\unitTests.csproj", "{6A774B65-DB1E-4C51-ACAA-3195EF7D1A4F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{4503EF7A-CD16-4217-8C57-236BB7E38C11}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4503EF7A-CD16-4217-8C57-236BB7E38C11}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4503EF7A-CD16-4217-8C57-236BB7E38C11}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A774B65-DB1E-4C51-ACAA-3195EF7D1A4F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A774B65-DB1E-4C51-ACAA-3195EF7D1A4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A774B65-DB1E-4C51-ACAA-3195EF7D1A4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A774B65-DB1E-4C51-ACAA-3195EF7D1A4F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

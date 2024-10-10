@@ -3,32 +3,48 @@
   "WorkspaceRootPath": "C:\\Users\\Marti\\OneDrive\\Documenten\\ICT\\S3.2\\S3DB01-Martijn-Verhappen-Individual-Project\\Web Shop API\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{9395828F-5670-44DC-B3FA-7D00E7CCEA6F}|Web Shop API\\Web Shop API.csproj|c:\\users\\marti\\onedrive\\documenten\\ict\\s3.2\\s3db01-martijn-verhappen-individual-project\\web shop api\\web shop api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9395828F-5670-44DC-B3FA-7D00E7CCEA6F}|Web Shop API\\Web Shop API.csproj|solutionrelative:web shop api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6A774B65-DB1E-4C51-ACAA-3195EF7D1A4F}|unitTests\\unitTests.csproj|c:\\users\\marti\\onedrive\\documenten\\ict\\s3.2\\s3db01-martijn-verhappen-individual-project\\web shop api\\unittests\\controllertests\\productcontrollertest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6A774B65-DB1E-4C51-ACAA-3195EF7D1A4F}|unitTests\\unitTests.csproj|solutionrelative:unittests\\controllertests\\productcontrollertest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9395828F-5670-44DC-B3FA-7D00E7CCEA6F}|Web Shop API\\Web Shop API.csproj|c:\\users\\marti\\onedrive\\documenten\\ict\\s3.2\\s3db01-martijn-verhappen-individual-project\\web shop api\\web shop api\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9395828F-5670-44DC-B3FA-7D00E7CCEA6F}|Web Shop API\\Web Shop API.csproj|solutionrelative:web shop api\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6A774B65-DB1E-4C51-ACAA-3195EF7D1A4F}|unitTests\\unitTests.csproj|c:\\users\\marti\\onedrive\\documenten\\ict\\s3.2\\s3db01-martijn-verhappen-individual-project\\web shop api\\unittests\\servicetests\\productservicetest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6A774B65-DB1E-4C51-ACAA-3195EF7D1A4F}|unitTests\\unitTests.csproj|solutionrelative:unittests\\servicetests\\productservicetest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{21EA436E-F1CB-4928-9B43-A6AC35DA977A}|DAL\\DAL.csproj|c:\\users\\marti\\onedrive\\documenten\\ict\\s3.2\\s3db01-martijn-verhappen-individual-project\\web shop api\\dal\\repositories\\productrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{21EA436E-F1CB-4928-9B43-A6AC35DA977A}|DAL\\DAL.csproj|solutionrelative:dal\\repositories\\productrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9395828F-5670-44DC-B3FA-7D00E7CCEA6F}|Web Shop API\\Web Shop API.csproj|c:\\users\\marti\\onedrive\\documenten\\ict\\s3.2\\s3db01-martijn-verhappen-individual-project\\web shop api\\web shop api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{9395828F-5670-44DC-B3FA-7D00E7CCEA6F}|Web Shop API\\Web Shop API.csproj|solutionrelative:web shop api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{6A774B65-DB1E-4C51-ACAA-3195EF7D1A4F}|unitTests\\unitTests.csproj|c:\\users\\marti\\onedrive\\documenten\\ict\\s3.2\\s3db01-martijn-verhappen-individual-project\\web shop api\\unittests\\repositorytests\\productrepositorytest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6A774B65-DB1E-4C51-ACAA-3195EF7D1A4F}|unitTests\\unitTests.csproj|solutionrelative:unittests\\repositorytests\\productrepositorytest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4503EF7A-CD16-4217-8C57-236BB7E38C11}|Logic\\Logic.csproj|c:\\users\\marti\\onedrive\\documenten\\ict\\s3.2\\s3db01-martijn-verhappen-individual-project\\web shop api\\logic\\services\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4503EF7A-CD16-4217-8C57-236BB7E38C11}|Logic\\Logic.csproj|solutionrelative:logic\\services\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{21EA436E-F1CB-4928-9B43-A6AC35DA977A}|DAL\\DAL.csproj|c:\\users\\marti\\onedrive\\documenten\\ict\\s3.2\\s3db01-martijn-verhappen-individual-project\\web shop api\\dal\\models\\productmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{21EA436E-F1CB-4928-9B43-A6AC35DA977A}|DAL\\DAL.csproj|solutionrelative:dal\\models\\productmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{21EA436E-F1CB-4928-9B43-A6AC35DA977A}|DAL\\DAL.csproj|c:\\users\\marti\\onedrive\\documenten\\ict\\s3.2\\s3db01-martijn-verhappen-individual-project\\web shop api\\dal\\repositories\\productrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{21EA436E-F1CB-4928-9B43-A6AC35DA977A}|DAL\\DAL.csproj|solutionrelative:dal\\repositories\\productrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{21EA436E-F1CB-4928-9B43-A6AC35DA977A}|DAL\\DAL.csproj|c:\\users\\marti\\onedrive\\documenten\\ict\\s3.2\\s3db01-martijn-verhappen-individual-project\\web shop api\\dal\\dbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{21EA436E-F1CB-4928-9B43-A6AC35DA977A}|DAL\\DAL.csproj|solutionrelative:dal\\dbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6A774B65-DB1E-4C51-ACAA-3195EF7D1A4F}|unitTests\\unitTests.csproj|c:\\users\\marti\\onedrive\\documenten\\ict\\s3.2\\s3db01-martijn-verhappen-individual-project\\web shop api\\unittests\\unittests.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "RelativeMoniker": "D:0:0:{6A774B65-DB1E-4C51-ACAA-3195EF7D1A4F}|unitTests\\unitTests.csproj|solutionrelative:unittests\\unittests.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9395828F-5670-44DC-B3FA-7D00E7CCEA6F}|Web Shop API\\Web Shop API.csproj|c:\\users\\marti\\onedrive\\documenten\\ict\\s3.2\\s3db01-martijn-verhappen-individual-project\\web shop api\\web shop api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9395828F-5670-44DC-B3FA-7D00E7CCEA6F}|Web Shop API\\Web Shop API.csproj|solutionrelative:web shop api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{21EA436E-F1CB-4928-9B43-A6AC35DA977A}|DAL\\DAL.csproj|c:\\users\\marti\\onedrive\\documenten\\ict\\s3.2\\s3db01-martijn-verhappen-individual-project\\web shop api\\dal\\models\\productmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{21EA436E-F1CB-4928-9B43-A6AC35DA977A}|DAL\\DAL.csproj|solutionrelative:dal\\models\\productmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9395828F-5670-44DC-B3FA-7D00E7CCEA6F}|Web Shop API\\Web Shop API.csproj|c:\\users\\marti\\onedrive\\documenten\\ict\\s3.2\\s3db01-martijn-verhappen-individual-project\\web shop api\\web shop api\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9395828F-5670-44DC-B3FA-7D00E7CCEA6F}|Web Shop API\\Web Shop API.csproj|solutionrelative:web shop api\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9395828F-5670-44DC-B3FA-7D00E7CCEA6F}|Web Shop API\\Web Shop API.csproj|c:\\users\\marti\\onedrive\\documenten\\ict\\s3.2\\s3db01-martijn-verhappen-individual-project\\web shop api\\web shop api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{9395828F-5670-44DC-B3FA-7D00E7CCEA6F}|Web Shop API\\Web Shop API.csproj|solutionrelative:web shop api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9395828F-5670-44DC-B3FA-7D00E7CCEA6F}|Web Shop API\\Web Shop API.csproj|c:\\users\\marti\\onedrive\\documenten\\ict\\s3.2\\s3db01-martijn-verhappen-individual-project\\web shop api\\web shop api\\web shop api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
@@ -61,7 +77,7 @@
       "DocumentGroups": [
         {
           "DockedHeight": 304,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -69,20 +85,59 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "DBContext.cs",
-              "DocumentMoniker": "C:\\Users\\Marti\\OneDrive\\Documenten\\ICT\\S3.2\\S3DB01-Martijn-Verhappen-Individual-Project\\Web Shop API\\DAL\\DBContext.cs",
-              "RelativeDocumentMoniker": "DAL\\DBContext.cs",
-              "ToolTip": "C:\\Users\\Marti\\OneDrive\\Documenten\\ICT\\S3.2\\S3DB01-Martijn-Verhappen-Individual-Project\\Web Shop API\\DAL\\DBContext.cs",
-              "RelativeToolTip": "DAL\\DBContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "ProductControllerTest.cs",
+              "DocumentMoniker": "C:\\Users\\Marti\\OneDrive\\Documenten\\ICT\\S3.2\\S3DB01-Martijn-Verhappen-Individual-Project\\Web Shop API\\unitTests\\ControllerTests\\ProductControllerTest.cs",
+              "RelativeDocumentMoniker": "unitTests\\ControllerTests\\ProductControllerTest.cs",
+              "ToolTip": "C:\\Users\\Marti\\OneDrive\\Documenten\\ICT\\S3.2\\S3DB01-Martijn-Verhappen-Individual-Project\\Web Shop API\\unitTests\\ControllerTests\\ProductControllerTest.cs",
+              "RelativeToolTip": "unitTests\\ControllerTests\\ProductControllerTest.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAAABIAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-02T07:12:32.089Z",
+              "WhenOpened": "2024-10-10T08:16:00.087Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
+              "Title": "ProductServiceTest.cs",
+              "DocumentMoniker": "C:\\Users\\Marti\\OneDrive\\Documenten\\ICT\\S3.2\\S3DB01-Martijn-Verhappen-Individual-Project\\Web Shop API\\unitTests\\ServiceTests\\ProductServiceTest.cs",
+              "RelativeDocumentMoniker": "unitTests\\ServiceTests\\ProductServiceTest.cs",
+              "ToolTip": "C:\\Users\\Marti\\OneDrive\\Documenten\\ICT\\S3.2\\S3DB01-Martijn-Verhappen-Individual-Project\\Web Shop API\\unitTests\\ServiceTests\\ProductServiceTest.cs",
+              "RelativeToolTip": "unitTests\\ServiceTests\\ProductServiceTest.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAAwCAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-10T08:06:48.723Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ProductRepositoryTest.cs",
+              "DocumentMoniker": "C:\\Users\\Marti\\OneDrive\\Documenten\\ICT\\S3.2\\S3DB01-Martijn-Verhappen-Individual-Project\\Web Shop API\\unitTests\\RepositoryTests\\ProductRepositoryTest.cs",
+              "RelativeDocumentMoniker": "unitTests\\RepositoryTests\\ProductRepositoryTest.cs",
+              "ToolTip": "C:\\Users\\Marti\\OneDrive\\Documenten\\ICT\\S3.2\\S3DB01-Martijn-Verhappen-Individual-Project\\Web Shop API\\unitTests\\RepositoryTests\\ProductRepositoryTest.cs",
+              "RelativeToolTip": "unitTests\\RepositoryTests\\ProductRepositoryTest.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAB8AAABAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-09T08:38:01.136Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ProductRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Marti\\OneDrive\\Documenten\\ICT\\S3.2\\S3DB01-Martijn-Verhappen-Individual-Project\\Web Shop API\\DAL\\Repositories\\ProductRepository.cs",
+              "RelativeDocumentMoniker": "DAL\\Repositories\\ProductRepository.cs",
+              "ToolTip": "C:\\Users\\Marti\\OneDrive\\Documenten\\ICT\\S3.2\\S3DB01-Martijn-Verhappen-Individual-Project\\Web Shop API\\DAL\\Repositories\\ProductRepository.cs",
+              "RelativeToolTip": "DAL\\Repositories\\ProductRepository.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABMAAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-02T07:22:28.182Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\Marti\\OneDrive\\Documenten\\ICT\\S3.2\\S3DB01-Martijn-Verhappen-Individual-Project\\Web Shop API\\Web Shop API\\Program.cs",
               "RelativeDocumentMoniker": "Web Shop API\\Program.cs",
@@ -90,51 +145,36 @@
               "RelativeToolTip": "Web Shop API\\Program.cs",
               "ViewState": "AgIAAAYAAAAAAAAAAAAAABYAAABrAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-26T08:51:41.109Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-26T08:51:41.109Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\Marti\\OneDrive\\Documenten\\ICT\\S3.2\\S3DB01-Martijn-Verhappen-Individual-Project\\Web Shop API\\Web Shop API\\appsettings.json",
-              "RelativeDocumentMoniker": "Web Shop API\\appsettings.json",
-              "ToolTip": "C:\\Users\\Marti\\OneDrive\\Documenten\\ICT\\S3.2\\S3DB01-Martijn-Verhappen-Individual-Project\\Web Shop API\\Web Shop API\\appsettings.json",
-              "RelativeToolTip": "Web Shop API\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-09-26T08:45:03.587Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ProductRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Marti\\OneDrive\\Documenten\\ICT\\S3.2\\S3DB01-Martijn-Verhappen-Individual-Project\\Web Shop API\\DAL\\Repositories\\ProductRepository.cs",
-              "RelativeDocumentMoniker": "DAL\\Repositories\\ProductRepository.cs",
-              "ToolTip": "C:\\Users\\Marti\\OneDrive\\Documenten\\ICT\\S3.2\\S3DB01-Martijn-Verhappen-Individual-Project\\Web Shop API\\DAL\\Repositories\\ProductRepository.cs",
-              "RelativeToolTip": "DAL\\Repositories\\ProductRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-02T07:22:28.182Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 8,
               "Title": "ProductModel.cs",
               "DocumentMoniker": "C:\\Users\\Marti\\OneDrive\\Documenten\\ICT\\S3.2\\S3DB01-Martijn-Verhappen-Individual-Project\\Web Shop API\\DAL\\Models\\ProductModel.cs",
               "RelativeDocumentMoniker": "DAL\\Models\\ProductModel.cs",
               "ToolTip": "C:\\Users\\Marti\\OneDrive\\Documenten\\ICT\\S3.2\\S3DB01-Martijn-Verhappen-Individual-Project\\Web Shop API\\DAL\\Models\\ProductModel.cs",
               "RelativeToolTip": "DAL\\Models\\ProductModel.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAYwBgAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-02T07:22:06.334Z",
+              "WhenOpened": "2024-10-02T07:22:06.334Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "DBContext.cs",
+              "DocumentMoniker": "C:\\Users\\Marti\\OneDrive\\Documenten\\ICT\\S3.2\\S3DB01-Martijn-Verhappen-Individual-Project\\Web Shop API\\DAL\\DBContext.cs",
+              "RelativeDocumentMoniker": "DAL\\DBContext.cs",
+              "ToolTip": "C:\\Users\\Marti\\OneDrive\\Documenten\\ICT\\S3.2\\S3DB01-Martijn-Verhappen-Individual-Project\\Web Shop API\\DAL\\DBContext.cs",
+              "RelativeToolTip": "DAL\\DBContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAABAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-02T07:12:32.089Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
               "Title": "ProductService.cs",
               "DocumentMoniker": "C:\\Users\\Marti\\OneDrive\\Documenten\\ICT\\S3.2\\S3DB01-Martijn-Verhappen-Individual-Project\\Web Shop API\\Logic\\Services\\ProductService.cs",
               "RelativeDocumentMoniker": "Logic\\Services\\ProductService.cs",
@@ -147,20 +187,18 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Microsoft.Common.CurrentVersion.targets",
-              "DocumentMoniker": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
-              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
-              "ToolTip": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
-              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
-              "ViewState": "AgIAAJsTAAAAAAAAAAAuwKkTAAAEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003801|",
-              "WhenOpened": "2024-10-02T11:02:06.245Z",
-              "EditorCaption": ""
+              "DocumentIndex": 6,
+              "Title": "unitTests",
+              "DocumentMoniker": "C:\\Users\\Marti\\OneDrive\\Documenten\\ICT\\S3.2\\S3DB01-Martijn-Verhappen-Individual-Project\\Web Shop API\\unitTests\\unitTests.csproj",
+              "RelativeDocumentMoniker": "unitTests\\unitTests.csproj",
+              "ToolTip": "C:\\Users\\Marti\\OneDrive\\Documenten\\ICT\\S3.2\\S3DB01-Martijn-Verhappen-Individual-Project\\Web Shop API\\unitTests\\unitTests.csproj",
+              "RelativeToolTip": "unitTests\\unitTests.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-10-09T08:43:32.343Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 9,
               "Title": "ProductController.cs",
               "DocumentMoniker": "C:\\Users\\Marti\\OneDrive\\Documenten\\ICT\\S3.2\\S3DB01-Martijn-Verhappen-Individual-Project\\Web Shop API\\Web Shop API\\Controllers\\ProductController.cs",
               "RelativeDocumentMoniker": "Web Shop API\\Controllers\\ProductController.cs",
@@ -168,12 +206,35 @@
               "RelativeToolTip": "Web Shop API\\Controllers\\ProductController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-25T08:24:26.102Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-25T08:24:26.102Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 10,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\Marti\\OneDrive\\Documenten\\ICT\\S3.2\\S3DB01-Martijn-Verhappen-Individual-Project\\Web Shop API\\Web Shop API\\appsettings.json",
+              "RelativeDocumentMoniker": "Web Shop API\\appsettings.json",
+              "ToolTip": "C:\\Users\\Marti\\OneDrive\\Documenten\\ICT\\S3.2\\S3DB01-Martijn-Verhappen-Individual-Project\\Web Shop API\\Web Shop API\\appsettings.json",
+              "RelativeToolTip": "Web Shop API\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-09-26T08:45:03.587Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Microsoft.Common.CurrentVersion.targets",
+              "DocumentMoniker": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
+              "ToolTip": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
+              "ViewState": "AgIAAJsTAAAAAAAAAAAuwKkTAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003801|",
+              "WhenOpened": "2024-10-02T11:02:06.245Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
               "Title": "launchSettings.json",
               "DocumentMoniker": "C:\\Users\\Marti\\OneDrive\\Documenten\\ICT\\S3.2\\S3DB01-Martijn-Verhappen-Individual-Project\\Web Shop API\\Web Shop API\\Properties\\launchSettings.json",
               "RelativeDocumentMoniker": "Web Shop API\\Properties\\launchSettings.json",
@@ -181,12 +242,11 @@
               "RelativeToolTip": "Web Shop API\\Properties\\launchSettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-10-02T11:14:35.028Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-02T11:14:35.028Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 11,
               "Title": "Web Shop API.csproj",
               "DocumentMoniker": "C:\\Users\\Marti\\OneDrive\\Documenten\\ICT\\S3.2\\S3DB01-Martijn-Verhappen-Individual-Project\\Web Shop API\\Web Shop API\\Web Shop API.csproj",
               "RelativeDocumentMoniker": "Web Shop API\\Web Shop API.csproj",
@@ -194,12 +254,11 @@
               "RelativeToolTip": "Web Shop API\\Web Shop API.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-10-02T11:16:57.549Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-02T11:16:57.549Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 14,
               "Title": "appsettings.Development.json",
               "DocumentMoniker": "C:\\Users\\Marti\\OneDrive\\Documenten\\ICT\\S3.2\\S3DB01-Martijn-Verhappen-Individual-Project\\Web Shop API\\Web Shop API\\appsettings.Development.json",
               "RelativeDocumentMoniker": "Web Shop API\\appsettings.Development.json",
@@ -207,12 +266,11 @@
               "RelativeToolTip": "Web Shop API\\appsettings.Development.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAABsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-10-02T08:27:29.722Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-02T08:27:29.722Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 12,
               "Title": "IProductRepository.cs",
               "DocumentMoniker": "C:\\Users\\Marti\\OneDrive\\Documenten\\ICT\\S3.2\\S3DB01-Martijn-Verhappen-Individual-Project\\Web Shop API\\DAL\\IRepositories\\IProductRepository.cs",
               "RelativeDocumentMoniker": "DAL\\IRepositories\\IProductRepository.cs",
@@ -220,12 +278,11 @@
               "RelativeToolTip": "DAL\\IRepositories\\IProductRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-02T07:25:44.614Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-02T07:25:44.614Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 15,
               "Title": "IProductService.cs",
               "DocumentMoniker": "C:\\Users\\Marti\\OneDrive\\Documenten\\ICT\\S3.2\\S3DB01-Martijn-Verhappen-Individual-Project\\Web Shop API\\Logic\\IServices\\IProductService.cs",
               "RelativeDocumentMoniker": "Logic\\IServices\\IProductService.cs",
@@ -233,8 +290,7 @@
               "RelativeToolTip": "Logic\\IServices\\IProductService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-02T07:16:27.505Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-02T07:16:27.505Z"
             }
           ]
         },

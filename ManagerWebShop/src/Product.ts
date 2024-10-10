@@ -1,7 +1,7 @@
 interface Product {
-    Id: number;
-    ProductType: string;
-    ProductNaam: string;
-    ProductPrijs: number;
-    ProductKorting: number;
+    id: number;
+    productType: string;
+    productNaam: string;
+    productPrijs: number;
+    productKorting: number;
 }
