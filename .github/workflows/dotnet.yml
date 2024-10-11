@@ -25,4 +25,4 @@ jobs:
     - name: Build "Web Shop API/Web Shop API.sln" --no-restore
       run: dotnet build "Web Shop API/Web Shop API.sln" --no-restore
     - name: Test
-      run: dotnet test "Web Shop API/Web Shop API.sln" --no-build --verbosity normal
+      run: dotnet test "Web Shop API/unitTests.csproj" --no-build --verbosity normal
