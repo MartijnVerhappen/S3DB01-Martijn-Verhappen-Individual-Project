@@ -1,0 +1,45 @@
+name: Tauri
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18.x'
+
+      - name: Install Rust
+        uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+          components: rustfmt
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build the Tauri app
+        run: npm run tauri build
+
+      - name: Run Unit Tests
+        run: npm test -- src/__tests__
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: ManagerWebShop-build
+          path: src-tauri/target/release/bundle
