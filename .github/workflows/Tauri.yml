@@ -34,6 +34,7 @@ jobs:
         run: npm install
 
       - name: Build the Tauri app
+        working-directory: ../S3DB01-Martijn-Verhappen-Individual-Project/ManagerWebShop
         run: npm run tauri build
 
       - name: Run Unit Tests
