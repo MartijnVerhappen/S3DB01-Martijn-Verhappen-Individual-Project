@@ -30,6 +30,7 @@ jobs:
           node-version: 18
 
       - name: Install dependencies
+        working-directory: ./ManagerWebShop
         run: npm install
 
       - name: Build the Tauri app
