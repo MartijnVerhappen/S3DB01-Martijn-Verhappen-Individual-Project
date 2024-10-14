@@ -14,20 +14,6 @@ jobs:
     steps:
     - uses: actions/checkout@v4
 
-    # Install necessary dependencies for GDK, JavaScriptCore, and Soup
-    - name: Install GDK and other dependencies
-      run: |
-        sudo apt update
-        sudo apt install -y libwebkit2gtk-4.0-dev \
-        build-essential \
-        curl \
-        wget \
-        file \
-        libssl-dev \
-        libgtk-3-dev \
-        libayatana-appindicator3-dev \
-        librsvg2-dev
-
     - name: Set PKG_CONFIG_PATH
       run: |
        echo "PKG_CONFIG_PATH=/usr/lib/x86_64-linux-gnu/pkgconfig" >> $GITHUB_ENV
