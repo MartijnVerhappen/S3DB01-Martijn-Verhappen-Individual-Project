@@ -30,7 +30,7 @@ jobs:
           node-version: 18
 
       - name: Install dependencies
-        working-directory: ./ManagerWebShop
+        working-directory: .S3DB01-Martijn-Verhappen-Individual-Project/ManagerWebShop
         run: npm install
 
       - name: Build the Tauri app
