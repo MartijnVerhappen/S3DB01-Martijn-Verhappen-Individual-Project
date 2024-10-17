@@ -37,11 +37,11 @@ jobs:
     - name: Cache npm dependencies
       uses: actions/cache@v3
       with:
-          path: |
-            node_modules
-          key: ${{ runner.os }}-node-${{ hashFiles('ManagerWebShop/package-lock.json') }}
-          restore-keys: |
-             ${{ runner.os }}-node-
+        path: |
+          ManagerWebShop/node_modules
+        key: ${{ runner.os }}-node-${{ hashFiles('ManagerWebShop/package-lock.json') }}
+        restore-keys: |
+          ${{ runner.os }}-node-
 
     - name: Install dependencies
       working-directory: ../S3DB01-Martijn-Verhappen-Individual-Project/ManagerWebShop
