@@ -26,13 +26,22 @@ jobs:
 
     - name: Set PKG_CONFIG_PATH
       run: |
-       echo "PKG_CONFIG_PATH=/usr/lib/x86_64-linux-gnu/pkgconfig" >> $GITHUB_ENV
+        export PKG_CONFIG_PATH="/usr/lib/x86_64-linux-gnu/pkgconfig"
 
     - name: Setup Node.js
       uses: actions/setup-node@v3
       with:
         node-version: '18'
         cache: 'npm'
+
+    - name: Cache npm dependencies
+      uses: actions/cache@v3
+      with:
+          path: |
+            node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+             ${{ runner.os }}-node-
 
     - name: Install dependencies
       working-directory: ../S3DB01-Martijn-Verhappen-Individual-Project/ManagerWebShop
