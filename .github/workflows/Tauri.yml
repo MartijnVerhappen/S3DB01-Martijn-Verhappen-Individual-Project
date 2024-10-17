@@ -32,7 +32,7 @@ jobs:
 
     - name: Set PKG_CONFIG_PATH
       run: |
-        export PKG_CONFIG_PATH=/usr/lib/pkgconfig:/usr/share/pkgconfig
+        export PKG_CONFIG_PATH=/usr/lib/x86_64-linux-gnu/pkgconfig:$PKG_CONFIG_PATH
 
     - name: Cache npm dependencies
       uses: actions/cache@v3
