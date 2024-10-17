@@ -31,7 +31,8 @@ jobs:
     - name: Setup Node.js
       uses: actions/setup-node@v3
       with:
-        node-version: '18'
+        node-version: lts/*
+        cache: 'npm'
 
     - name: Install Rust
       run: |
@@ -40,6 +41,11 @@ jobs:
         rustup update
         rustup target add x86_64-unknown-linux-gnu
 
+    - name: Rust cache
+      uses: swatinem/rust-cache@v2
+      with:
+        workspaces: './src-tauri -> target'
+        
     - name: Install dependencies
       working-directory: ../S3DB01-Martijn-Verhappen-Individual-Project/ManagerWebShop
       run: npm install
