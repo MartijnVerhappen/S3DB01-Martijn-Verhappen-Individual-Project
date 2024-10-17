@@ -34,6 +34,10 @@ jobs:
         node-version: '18'
         cache: 'npm'
 
+    - name: Install dependencies
+      working-directory: ../S3DB01-Martijn-Verhappen-Individual-Project/ManagerWebShop
+      run: npm install
+
     - name: Install Rust
       run: |
         curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
@@ -45,10 +49,6 @@ jobs:
       uses: swatinem/rust-cache@v2
       with:
         workspaces: './src-tauri -> target'
-        
-    - name: Install dependencies
-      working-directory: ../S3DB01-Martijn-Verhappen-Individual-Project/ManagerWebShop
-      run: npm install
 
     - name: Build the Tauri app
       working-directory: ../S3DB01-Martijn-Verhappen-Individual-Project/ManagerWebShop
