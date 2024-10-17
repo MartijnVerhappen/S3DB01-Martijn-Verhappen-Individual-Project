@@ -65,7 +65,7 @@ jobs:
       run: npm run tauri build
 
     - name: Run Unit Tests
-      run: npm test -- src/__tests__
+      run: npm test -- ./src/__tests__
 
     - name: Upload artifacts
       uses: actions/upload-artifact@v3
