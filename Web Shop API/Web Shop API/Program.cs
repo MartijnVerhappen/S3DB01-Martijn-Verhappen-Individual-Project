@@ -1,6 +1,6 @@
 using DAL;
 using System.Configuration;
-using Web_Shop_API.IRepositories;
+using Web_Shop_API.DAL.IRepositories;
 using Web_Shop_API.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Logic.IServices;

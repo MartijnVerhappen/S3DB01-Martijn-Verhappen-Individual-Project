@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Web_Shop_API.IRepositories;
+using Web_Shop_API.DAL.IRepositories;
 using Web_Shop_API.Models;
 
 namespace unitTests.ServiceTests

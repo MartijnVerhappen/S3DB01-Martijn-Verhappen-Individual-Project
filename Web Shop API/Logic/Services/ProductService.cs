@@ -1,12 +1,13 @@
 ﻿using Logic.IServices;
-using Web_Shop_API.IRepositories;
 using Web_Shop_API.Models;
+using Microsoft.AspNetCore.Mvc;
+using Web_Shop_API.DAL.IRepositories;
 
 namespace Logic.Services
 {
     public class ProductService : IProductService
     {
-        public IProductRepository _productRepository;
+        private readonly IProductRepository _productRepository;
         public ProductService(IProductRepository productRepository)
         {
             _productRepository = productRepository;
@@ -15,6 +16,16 @@ namespace Logic.Services
         public async Task<List<ProductModel>> GetAllProducts()
         {
             return await _productRepository.GetAllProducts();
+        }
+
+        public async Task<ProductModel> GetProductById(int id)
+        {
+            return await _productRepository.GetProductById(id);
+        }
+
+        public async Task<ProductModel> UpdateProduct(ProductModel updatedProduct)
+        {
+            return await _productRepository.UpdateProduct(updatedProduct);
         }
     }
 }

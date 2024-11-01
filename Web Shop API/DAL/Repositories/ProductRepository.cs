@@ -1,7 +1,10 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Web_Shop_API.IRepositories;
 using Web_Shop_API.Models;
 using DAL;
+using System.Linq;
+using Microsoft.AspNetCore.Mvc;
+using System.Text.Json;
+using Web_Shop_API.DAL.IRepositories;
 
 namespace Web_Shop_API.Repositories
 {
@@ -21,9 +24,26 @@ namespace Web_Shop_API.Repositories
         }
 
 
-        public Task<ProductModel> GetProductById(int id)
+        public async Task<ProductModel> GetProductById(int id)
         {
-            throw new NotImplementedException();
+            return await _context.Product.FirstOrDefaultAsync(p => p.Id == id);
+        }
+
+        public async Task<ProductModel> UpdateProduct(ProductModel updatedProduct)
+        {
+            var existingProduct = await _context.Product.FindAsync(updatedProduct.Id);
+
+            if (existingProduct == null)
+            {
+                throw new Exception("Product not found.");
+            }
+
+            existingProduct.ApplyChanges(updatedProduct);
+
+            // Save changes to the database
+            await _context.SaveChangesAsync();
+
+            return existingProduct;
         }
     }
 }

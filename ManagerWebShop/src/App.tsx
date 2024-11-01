@@ -2,7 +2,6 @@ import { useState } from "react";
 import axios from "axios";
 import "./App.css";
 import { Product } from "./Product";
-
 function App() {
   const [responseData, setResponseData] = useState<Product[]>([]);
   const [error, setError] = useState<string | null>(null);
