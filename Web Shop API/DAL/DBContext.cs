@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Web_Shop_API.Models;
+using Core.Models;
 
 namespace DAL
 {

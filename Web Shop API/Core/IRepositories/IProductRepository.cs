@@ -1,7 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Web_Shop_API.Models;
+﻿using Core.Models;
 
-namespace Web_Shop_API.DAL.IRepositories
+namespace Core.IRepositories
 {
     public interface IProductRepository
     {

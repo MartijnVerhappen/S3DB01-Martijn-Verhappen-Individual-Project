@@ -1,10 +1,10 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Web_Shop_API.Models;
+using Core.Models;
 using DAL;
 using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using System.Text.Json;
-using Web_Shop_API.DAL.IRepositories;
+using Core.IRepositories;
 
 namespace Web_Shop_API.Repositories
 {
@@ -31,16 +31,13 @@ namespace Web_Shop_API.Repositories
 
         public async Task<ProductModel> UpdateProduct(ProductModel updatedProduct)
         {
-            var existingProduct = await _context.Product.FindAsync(updatedProduct.Id);
+            ProductModel existingProduct = await _context.Product.FindAsync(updatedProduct.Id);
 
             if (existingProduct == null)
             {
                 throw new Exception("Product not found.");
             }
 
-            existingProduct.ApplyChanges(updatedProduct);
-
-            // Save changes to the database
             await _context.SaveChangesAsync();
 
             return existingProduct;

@@ -1,4 +1,4 @@
-﻿namespace Web_Shop_API.DTO_s
+﻿namespace Core.DTO_s
 {
     public class ProductDTO
     {

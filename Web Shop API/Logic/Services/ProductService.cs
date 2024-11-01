@@ -1,7 +1,9 @@
-﻿using Logic.IServices;
-using Web_Shop_API.Models;
+﻿using Core.IRepositories;
+using Core.IServices;
+using Core.Models;
+using Core.DTO_s;
+using Core;
 using Microsoft.AspNetCore.Mvc;
-using Web_Shop_API.DAL.IRepositories;
 
 namespace Logic.Services
 {
@@ -11,6 +13,11 @@ namespace Logic.Services
         public ProductService(IProductRepository productRepository)
         {
             _productRepository = productRepository;
+        }
+
+        private void MapDtoToModel(ProductDTO dto, ProductModel model)
+        {
+            model.Update(dto.ProductType, dto.ProductNaam, dto.ProductPrijs, dto.ProductKorting);
         }
 
         public async Task<List<ProductModel>> GetAllProducts()
@@ -23,9 +30,17 @@ namespace Logic.Services
             return await _productRepository.GetProductById(id);
         }
 
-        public async Task<ProductModel> UpdateProduct(ProductModel updatedProduct)
+        public async Task<ProductModel> UpdateProduct(int id, ProductDTO updatedProductDto)
         {
-            return await _productRepository.UpdateProduct(updatedProduct);
+            var existingProduct = await _productRepository.GetProductById(updatedProductDto.Id);
+            if (existingProduct == null)
+                throw new Exception("Product not found");
+
+            existingProduct.ApplyChanges(updatedProductDto);
+
+            await _productRepository.UpdateProduct(existingProduct);
+
+            return existingProduct;
         }
     }
 }

@@ -1,12 +1,12 @@
-﻿using Web_Shop_API.Models;
+﻿using Core.Models;
+using Core.DTO_s;
 
-namespace Logic.IServices
+namespace Core.IServices
 {
     public interface IProductService
     {
         Task<List<ProductModel>> GetAllProducts();
         Task<ProductModel> GetProductById(int id);
-
-        Task<ProductModel> UpdateProduct(ProductModel updatedProduct);
+        Task<ProductModel> UpdateProduct(int id, ProductDTO updatedProductDto);
     }
 }

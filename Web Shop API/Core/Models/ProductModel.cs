@@ -1,6 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using Core.DTO_s;
 
-namespace Web_Shop_API.Models
+namespace Core.Models
 {
     public class ProductModel
     {
@@ -33,7 +34,7 @@ namespace Web_Shop_API.Models
             ProductKorting = productKorting;
         }
 
-        public void ApplyChanges(ProductModel updatedProduct)
+        public void ApplyChanges(ProductDTO updatedProduct)
         {
             if (!string.IsNullOrEmpty(updatedProduct.ProductType))
             {

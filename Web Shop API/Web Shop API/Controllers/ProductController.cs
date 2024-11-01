@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Web_Shop_API.Models;
-using Logic.IServices;
-using Web_Shop_API.DTO_s;
-using Web_Shop_API.Models;
+using Core.Models;
+using Core.IServices;
+using Core.DTO_s;
+using Core.Models;
 
 namespace Web_Shop_API.Controllers
 {
@@ -41,11 +41,11 @@ namespace Web_Shop_API.Controllers
         }
 
         [HttpPut("Update")]
-        public async Task<IActionResult> UpdateProduct(int id, [FromBody] ProductModel updatedProduct)
+        public async Task<IActionResult> UpdateProduct(int id, [FromBody] ProductDTO updatedProduct)
         {
             if (id <= 0)
             {
-                return BadRequest("incorrect product ID");
+                return BadRequest("Incorrect product ID.");
             }
 
             if (updatedProduct == null)
@@ -58,17 +58,14 @@ namespace Web_Shop_API.Controllers
                 return BadRequest(ModelState);
             }
 
-            var existingProduct = await _productService.GetProductById(id);
-            if (existingProduct == null)
+            var updatedProductModel = await _productService.UpdateProduct(id, updatedProduct);
+
+            if (updatedProductModel == null)
             {
                 return NotFound("Product not found.");
             }
 
-            existingProduct.ApplyChanges(updatedProduct);
-
-            await _productService.UpdateProduct(existingProduct);
-
-            return Ok(existingProduct);
+            return Ok(updatedProductModel);
         }
     }
 }

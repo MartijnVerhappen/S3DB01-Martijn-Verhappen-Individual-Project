@@ -1,9 +1,9 @@
 using DAL;
 using System.Configuration;
-using Web_Shop_API.DAL.IRepositories;
+using Core.IRepositories;
 using Web_Shop_API.Repositories;
 using Microsoft.EntityFrameworkCore;
-using Logic.IServices;
+using Core.IServices;
 using Logic.Services;
 
 var AllowTauriOrigin = "AllowTauriOrigin";
