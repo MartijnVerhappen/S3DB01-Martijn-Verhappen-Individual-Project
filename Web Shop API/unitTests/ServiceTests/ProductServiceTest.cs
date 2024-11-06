@@ -5,37 +5,79 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Web_Shop_API.DAL.IRepositories;
-using Web_Shop_API.Models;
+using Core.IRepositories;
+using Core.Models;
+using Microsoft.EntityFrameworkCore;
+using Core.DTO_s;
+using DAL;
+using Web_Shop_API.Repositories;
 
 namespace unitTests.ServiceTests
 {
     public class ProductServiceTest
     {
-        [Fact]
-        public void Test_Service_GetAllProducts()
+        private ProductService _service;
+        private DbContextOptions<DBContext> _options;
+
+        public ProductServiceTest()
         {
-            //Arrange
-            var mockRepo = new Mock<IProductRepository>();
+            _options = new DbContextOptionsBuilder<DBContext>()
+                        .UseInMemoryDatabase(databaseName: Guid.NewGuid().ToString())
+                        .Options;
 
-            var products = new List<ProductModel>
+            using (var context = new DBContext(_options))
             {
-            new ProductModel(1, "Videogame", "Monster Hunter World", 60, 0),
-            new ProductModel(2, "Videogame", "God of War", 50, 60)
-            };
+                context.Database.EnsureCreated();
+            }
 
-            mockRepo.Setup(repo => repo.GetAllProducts()).ReturnsAsync(products);
+            var repository = new ProductRepository(new DBContext(_options));
+            _service = new ProductService(repository);
+        }
 
-            var service = new ProductService(mockRepo.Object);
+        private async Task SeedDatabase(DBContext context)
+        {
+            context.Product.AddRange(
+                new ProductModel(1, "Videogame", "Monster Hunter World", 60, 0),
+                new ProductModel(2, "Videogame", "God of War", 50, 60)
+            );
+            await context.SaveChangesAsync();
+        }
 
-            //Act
-            var result = service.GetAllProducts().Result;
+        [Fact]
+        public async Task Test_Service_GetAllProducts()
+        {
+            // Arrange
+            using (var context = new DBContext(_options))
+            {
+                await SeedDatabase(context);
 
-            //Assert
-            Assert.NotNull(result);
-            Assert.Equal(2, result.Count);
-            Assert.Equal("Monster Hunter World", result[0].ProductNaam);
-            Assert.Equal("God of War", result[1].ProductNaam);
+                // Act
+                var result = await _service.GetAllProducts();
+
+                // Assert
+                Assert.NotNull(result);
+                Assert.Equal(2, result.Count);
+                Assert.Equal("Monster Hunter World", result[0].ProductNaam);
+                Assert.Equal("God of War", result[1].ProductNaam);
+            }
+        }
+
+        [Fact]
+        public async Task Test_Service_UpdateProduct()
+        {
+            using (var context = new DBContext(_options))
+            {
+                ProductDTO updatedProduct = new ProductDTO(1, "Videogame", "Monster Hunter World", 60, 10);
+                await SeedDatabase(context);
+
+                // Act
+                var result = await _service.UpdateProduct(1, updatedProduct);
+
+                // Assert
+                Assert.NotNull(result);
+                Assert.Equal(1, result.Id);
+                Assert.Equal(10, result.ProductKorting);
+            }
         }
     }
 }

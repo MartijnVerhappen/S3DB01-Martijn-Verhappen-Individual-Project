@@ -38,6 +38,15 @@ namespace Web_Shop_API.Repositories
                 throw new Exception("Product not found.");
             }
 
+            typeof(ProductModel).GetProperties()
+            .Where(prop => prop.CanWrite)
+            .ToList()
+            .ForEach(prop =>
+            {
+                Object newValue = prop.GetValue(updatedProduct);
+                prop.SetValue(existingProduct, newValue);
+            });
+
             await _context.SaveChangesAsync();
 
             return existingProduct;
