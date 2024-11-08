@@ -30,17 +30,17 @@ jobs:
     - name: Login to DockerHub
       uses: docker/login-action@v2
       with:
-        username: ${{ secrets.martijn451 }}
-        password: ${{ secrets.njitram0603 }}
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_PASSWORD }}
 
     - name: Build Docker image
       run: |
-        docker build -t ${{ secrets.martijn451 }}/web-shop-api:${{ github.sha }} .
+        docker build -t ${{ secrets.DOCKER_USERNAME }}/web-shop-api:${{ github.sha }} .
 
     - name: Build Docker image
       run: |
-        docker build -t ${{ secrets.martijn451 }}/web-shop-api:${{ github.sha }} .
+        docker build -t ${{ secrets.DOCKER_USERNAME }}/web-shop-api:${{ github.sha }} .
 
     - name: Push Docker image to DockerHub
       run: |
-        docker push ${{ secrets.martijn451 }}/web-shop-api:${{ github.sha }}
+        docker push ${{ secrets.DOCKER_USERNAME }}/web-shop-api:${{ github.sha }}
