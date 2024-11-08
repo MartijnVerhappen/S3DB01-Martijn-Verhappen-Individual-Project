@@ -26,3 +26,21 @@ jobs:
       run: dotnet build "Web Shop API/Web Shop API.sln" --no-restore
     - name: Test
       run: dotnet test "Web Shop API/unitTests/unitTests.csproj" --no-build --verbosity normal
+
+    - name: Login to DockerHub
+      uses: docker/login-action@v2
+      with:
+        username: ${{ secrets.martijn451 }}
+        password: ${{ secrets.njitram0603 }}
+
+    - name: Build Docker image
+      run: |
+        docker build -t ${{ secrets.martijn451 }}/web-shop-api:${{ github.sha }} .
+
+    - name: Build Docker image
+      run: |
+        docker build -t ${{ secrets.martijn451 }}/web-shop-api:${{ github.sha }} .
+
+    - name: Push Docker image to DockerHub
+      run: |
+        docker push ${{ secrets.martijn451 }}/web-shop-api:${{ github.sha }}
