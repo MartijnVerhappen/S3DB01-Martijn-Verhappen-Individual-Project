@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35312.102
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Web Shop API", "Web Shop API\Web Shop API.csproj", "{9395828F-5670-44DC-B3FA-7D00E7CCEA6F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebShopAPI", "WebShopAPI\WebShopAPI.csproj", "{9395828F-5670-44DC-B3FA-7D00E7CCEA6F}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DAL", "DAL\DAL.csproj", "{21EA436E-F1CB-4928-9B43-A6AC35DA977A}"
 EndProject
@@ -11,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Logic", "Logic\Logic.csproj
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "unitTests", "unitTests\unitTests.csproj", "{6A774B65-DB1E-4C51-ACAA-3195EF7D1A4F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "Core\Core.csproj", "{7DC333DE-96A5-4E5E-A4C2-547A8AA8E3D0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core", "Core\Core.csproj", "{7DC333DE-96A5-4E5E-A4C2-547A8AA8E3D0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
