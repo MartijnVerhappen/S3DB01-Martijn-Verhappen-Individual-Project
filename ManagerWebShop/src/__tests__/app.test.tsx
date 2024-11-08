@@ -23,10 +23,6 @@ describe("App Component", () => {
     });
 
     render(<App />);
-    
-    // Simulate form submission
-    fireEvent.click(screen.getByText("Call API"));
-
     // Check if products are displayed
     await waitFor(() => {
       expect(screen.getByText(/Monster Hunter World/i)).toBeInTheDocument();
