@@ -36,8 +36,7 @@ jobs:
       run: echo "$HOME/.dotnet/tools" >> $GITHUB_PATH
 
     - name: Run tests with DotCover
-      run: |
-        dotnet dotcover cover dotcover-config.xml
+      run: dotnet dotcover cover dotcover-config.xml
 
     - name: Upload Coverage Report
       if: always()
