@@ -27,7 +27,7 @@ jobs:
 
     - name: Download DotCover Console Runner
       run: |
-        wget https://download.jetbrains.com/dotcover/dotCover.Console.2024.3.zip -O dotcover.zip
+        wget https://download.jetbrains.com/dotcover/dotCover.Console.2023.2.5.zip -O dotcover.zip
         unzip dotcover.zip -d dotcover
         chmod +x dotcover/dotCover.sh
 
