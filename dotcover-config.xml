@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CoverageParams>
+  <TargetExecutable>dotnet</TargetExecutable>
+  <TargetArguments>test WebShopAPI/unitTests/unitTests.csproj --no-build --verbosity normal</TargetArguments>
+  <Output>coverage.dcvr</Output>
+  <ReportType>HTML</ReportType>
+  <ReportFile>coverage.html</ReportFile>
+</CoverageParams>

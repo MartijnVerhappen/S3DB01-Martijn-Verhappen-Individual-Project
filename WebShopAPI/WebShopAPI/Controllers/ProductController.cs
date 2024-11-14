@@ -58,7 +58,7 @@ namespace Web_Shop_API.Controllers
                 return BadRequest(ModelState);
             }
 
-            var updatedProductModel = await _productService.UpdateProduct(id, updatedProduct);
+            ProductModel updatedProductModel = await _productService.UpdateProduct(id, updatedProduct);
 
             if (updatedProductModel == null)
             {
