@@ -25,12 +25,15 @@ jobs:
     - name: Build project
       run: dotnet build "WebShopAPI/WebShopAPI.sln" --no-restore
 
-    - name: Install DotCover
-      run: dotnet tool install --global JetBrains.dotCover.GlobalTool
+    - name: Download DotCover Console Runner
+      run: |
+        wget https://download.jetbrains.com/dotcover/dotCover.Console.2023.2.5.zip -O dotcover.zip
+        unzip dotcover.zip -d dotcover
+        chmod +x dotcover/dotCover.sh
 
     - name: Run tests with DotCover
       run: |
-        dotnet dotcover cover dotcover-config.xml
+        dotcover/dotCover.sh cover dotcover-config.xml
 
     - name: Upload Coverage Report
       if: always()
