@@ -29,14 +29,14 @@ jobs:
       run: |
         dotnet tool install --global JetBrains.dotCover.CommandLineTools --version 2024.3.0
 
+    - name: Set up PATH for DotCover tool
+      run: echo "$HOME/.dotnet/tools" >> $GITHUB_PATH
+
     - name: Verify DotCover Installation
       run: |
         echo "Checking if dotnet-dotcover is installed"
         dotnet tool list --global
         which dotnet-dotcover || echo "DotCover tool not found!"
-
-    - name: Set up PATH for DotCover tool
-      run: echo "$HOME/.dotnet/tools" >> $GITHUB_PATH
 
     - name: Run tests with DotCover
       run: dotnet dotcover cover dotcover-config.xml
