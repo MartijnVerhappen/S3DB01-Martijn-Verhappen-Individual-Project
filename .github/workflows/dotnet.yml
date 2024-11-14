@@ -35,7 +35,7 @@ jobs:
         ls $HOME/.dotnet/tools
   
     - name: Run tests with DotCover
-      run: dotnet-dotCover cover dotcover-config.xml
+      run: dotCover.exe dotnet --output=AppCoverageReport.html -- test "WebShopAPI/unitTests/unitTests.csproj"
 
     - name: Upload Coverage Report
       if: always()
