@@ -25,11 +25,12 @@ jobs:
     - name: Build project
       run: dotnet build "WebShopAPI/WebShopAPI.sln" --no-restore
 
-    - name: Download DotCover Console Runner
+    - name: Install DotCover Tool
       run: |
-        wget https://download.jetbrains.com/dotcover/dotCover.Console.2024.3.0.zip -O dotcover.zip
-        unzip dotcover.zip -d dotcover
-        chmod +x dotcover/dotCover.sh
+        # Install DotCover globally
+        dotnet tool install --global JetBrains.dotCover.CommandLineTools --version 2024.3.0
+        # Ensure the tools are available in the path
+        echo "$(dotnet tool list --global)"  # Verify if DotCover is listed
 
     - name: Run tests with DotCover
       run: |
