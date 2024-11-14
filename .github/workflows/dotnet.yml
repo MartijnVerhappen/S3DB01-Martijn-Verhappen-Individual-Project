@@ -32,6 +32,9 @@ jobs:
         # Ensure the tools are available in the path
         echo "$(dotnet tool list --global)"  # Verify if DotCover is listed
 
+    - name: Set up PATH for DotCover tool
+      run: echo "$HOME/.dotnet/tools" >> $GITHUB_PATH
+
     - name: Run tests with DotCover
       run: |
         dotnet dotcover cover dotcover-config.xml
