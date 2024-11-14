@@ -30,7 +30,7 @@ jobs:
 
     - name: Run tests with DotCover
       run: |
-        dotnet dotcover analyse dotcover-config.xml
+        dotnet dotcover cover dotcover-config.xml
 
     - name: Upload Coverage Report
       if: always()
