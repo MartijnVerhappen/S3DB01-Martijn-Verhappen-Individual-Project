@@ -30,12 +30,7 @@ jobs:
 
     - name: Run tests with DotCover
       run: |
-        dotnet dotcover test \
-          --output="coverage.dcvr" \
-          --reportType=HTML \
-          --report="coverage.html" \
-          --targetExecutable="dotnet" \
-          --targetArguments="test WebShopAPI/unitTests/unitTests.csproj --no-build --verbosity normal"
+        dotnet dotcover analyse dotcover-config.xml
 
     - name: Upload Coverage Report
       if: always()
