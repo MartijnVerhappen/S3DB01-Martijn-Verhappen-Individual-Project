@@ -44,8 +44,11 @@ jobs:
 
     - name: Run tests with DotCover
       run: |
+        # Run the tests and collect code coverage
         dotnet test "WebShopAPI/unitTests/unitTests.csproj" --no-build --collect:"Code Coverage"
-        dotnet-dotCover report --source=dotnet --output=coverage-report.xml
+
+        # Generate the coverage report using DotCover
+        dotnet-dotCover report --source=dotnet --output=coverage-report.xml --coverage-file=WebShopAPI/unitTests/TestResults/*/*.coverage
 
     - name: Upload Coverage Report
       if: always()
