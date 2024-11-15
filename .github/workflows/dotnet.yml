@@ -30,7 +30,7 @@ jobs:
         /k:"MartijnVerhappen_S3DB01-Martijn-Verhappen-Individual-Project" \
         /o:"martijnverhappen" \
         /d:sonar.login="${{ secrets.SONAR_TOKEN }}" \
-        /d:sonar.coverageReportPaths="coverage-report/sonarqube-report.xml"
+        /d:sonar.coverageReportPaths="coverage-report/SonarQube.xml"
       env:
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
