@@ -43,7 +43,7 @@ jobs:
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
     - name: Run tests and collect coverage
-      run: dotnet test "WebShopAPI/unitTests/unitTests.csproj" --no-build --collect:"Code Coverage"
+      run: dotnet test "WebShopAPI/unitTests/unitTests.csproj" --no-build --collect:"Code Coverage" --logger "trx;LogFileName=TestResults.trx"
 
     - name: Generate coverage report with dotCover
       run: |
