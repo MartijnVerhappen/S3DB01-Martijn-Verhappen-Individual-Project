@@ -45,6 +45,12 @@ jobs:
     - name: Run tests and collect coverage
       run: dotnet test "WebShopAPI/unitTests/unitTests.csproj" --no-build --collect:"Code Coverage"
 
+    - name: Generate coverage report with dotCover
+      run: |
+        dotnet dotCover report \
+        --source="WebShopAPI/unitTests/TestResults/**/*/*.coverage" \
+        --output=coverage-report.html
+
     - name: List TestResults directory
       run: |
         ls -R WebShopAPI/unitTests/TestResults
