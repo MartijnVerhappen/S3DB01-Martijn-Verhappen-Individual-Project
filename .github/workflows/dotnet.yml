@@ -34,10 +34,11 @@ jobs:
     - name: Run SonarScanner Begin
       run: |
         dotnet-sonarscanner begin \
-          /k:"S3DB01-Martijn-Verhappen-Individual-Project" \
-          /o:"martijnverhappen" \
-          /d:sonar.login="${{ secrets.SONAR_TOKEN }}" \
-          /d:sonar.host.url="https://sonarcloud.io"
+        /k:"S3DB01-Martijn-Verhappen-Individual-Project" \
+        /o:"martijnverhappen" \
+        /d:sonar.login="${{ secrets.SONAR_TOKEN }}" \
+        /d:sonar.host.url="https://sonarcloud.io" \
+        /d:sonar.branch.name="main"
       env:
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
