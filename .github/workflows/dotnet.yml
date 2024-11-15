@@ -24,38 +24,38 @@ jobs:
     - name: Install SonarScanner
       run: dotnet tool install --global dotnet-sonarscanner
 
-    - name: Run SonarCloud Begin
-      run: |
-        dotnet-sonarscanner begin \
-        /k:"MartijnVerhappen_S3DB01-Martijn-Verhappen-Individual-Project" \
-        /o:"martijnverhappen" \
-        /d:sonar.login="${{ secrets.SONAR_TOKEN }}" \
-        /d:sonar.coverageReportPaths="coverage-report/Cobertura.xml"
-      env:
-        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+- name: Run SonarCloud Begin
+  run: |
+    dotnet-sonarscanner begin \
+    /k:"MartijnVerhappen_S3DB01-Martijn-Verhappen-Individual-Project" \
+    /o:"martijnverhappen" \
+    /d:sonar.login="${{ secrets.SONAR_TOKEN }}" \
+    /d:sonar.coverageReportPaths="coverage-report/sonarqube-report.xml"
+  env:
+    SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
-    - name: Build project
-      run: dotnet build "WebShopAPI/WebShopAPI.sln" --no-restore
+- name: Build project
+  run: dotnet build "WebShopAPI/WebShopAPI.sln" --no-restore
 
-    - name: Run Tests and Collect Coverage
-      run: dotnet test "WebShopAPI/unitTests/unitTests.csproj" --no-build --collect:"Code Coverage" --logger:"trx"
+- name: Run Tests and Collect Coverage
+  run: dotnet test "WebShopAPI/unitTests/unitTests.csproj" --no-build --collect:"Code Coverage" --logger:"trx"
 
-    - name: Create coverage report directory
-      run: mkdir -p coverage-report
+- name: Create coverage report directory
+  run: mkdir -p coverage-report
 
-    - name: Generate coverage report with reportgenerator
-      run: |
-        dotnet tool install --global dotnet-reportgenerator-globaltool --version 5.1.0
-        reportgenerator "-reports:./WebShopAPI/unitTests/TestResults/*.trx" "-targetdir:coverage-report" -reporttypes:sonarqube
+- name: Generate coverage report with reportgenerator
+  run: |
+    dotnet tool install --global dotnet-reportgenerator-globaltool --version 5.1.0
+    reportgenerator "-reports:./WebShopAPI/unitTests/TestResults/*.trx" "-targetdir:coverage-report" -reporttypes:sonarqube
 
-    - name: List coverage-report directory
-      run: |
-        ls -R coverage-report
+- name: List coverage-report directory
+  run: |
+    ls -R coverage-report
 
-    - name: Run SonarScanner End
-      run: |
-        dotnet-sonarscanner end \
-          /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
+- name: Run SonarScanner End
+  run: |
+    dotnet-sonarscanner end \
+      /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
 
     - name: Login to DockerHub
       uses: docker/login-action@v2
