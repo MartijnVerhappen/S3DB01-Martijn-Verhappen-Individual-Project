@@ -43,14 +43,16 @@ jobs:
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
     - name: Run tests with DotCover
-      run: dotnet-dotCover dotnet --output=AppCoverageReport.html -- test "WebShopAPI/unitTests/unitTests.csproj"
+      run: |
+        dotnet test "WebShopAPI/unitTests/unitTests.csproj" --no-build --collect:"Code Coverage"
+        dotcover report --source=dotnet --output=coverage-report.xml
 
     - name: Upload Coverage Report
       if: always()
       uses: actions/upload-artifact@v3
       with:
         name: coverage-report
-        path: coverage.html
+        path: coverage-report.xml
 
     - name: Run SonarScanner End
       run: |
