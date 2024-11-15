@@ -41,24 +41,12 @@ jobs:
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
     - name: Run Tests and Collect Coverage
-      run: dotnet test "WebShopAPI/unitTests/unitTests.csproj" --no-build --collect:"Code Coverage"
+      run: dotnet test "WebShopAPI/unitTests/unitTests.csproj" --no-build --collect:"Code Coverage" --logger:"trx"
 
-    - name: List TestResults directory
+    - name: Publish Code Coverage Report
       run: |
-        ls -R WebShopAPI/unitTests/TestResults
-
-    - name: Generate coverage report with dotCover
-      run: |
-        dotnet dotCover report \
-        --source="WebShopAPI/unitTests/TestResults/**/*.coverage" \
-        --output=coverage-report.html
-
-    - name: Upload Coverage Report
-      if: always()
-      uses: actions/upload-artifact@v3
-      with:
-        name: coverage-report
-        path: coverage-report.html
+        mkdir coverage-report
+        dotnet reportgenerator "-reports:./WebShopAPI/unitTests/TestResults/*.trx" "-targetdir:coverage-report"
 
     - name: Run SonarScanner End
       run: |
