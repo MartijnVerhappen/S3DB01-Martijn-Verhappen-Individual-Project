@@ -43,10 +43,13 @@ jobs:
     - name: Run Tests and Collect Coverage
       run: dotnet test "WebShopAPI/unitTests/unitTests.csproj" --no-build --collect:"Code Coverage" --logger:"trx"
 
-    - name: Publish Code Coverage Report
+    - name: Create coverage report directory
+      run: mkdir -p coverage-report
+
+    - name: Generate coverage report with reportgenerator
       run: |
-        mkdir coverage-report
-        dotnet reportgenerator "-reports:./WebShopAPI/unitTests/TestResults/*.trx" "-targetdir:coverage-report"
+        dotnet tool install --global dotnet-reportgenerator-globaltool --version 5.1.0
+        reportgenerator "-reports:./WebShopAPI/unitTests/TestResults/*.trx" "-targetdir:coverage-report"
 
     - name: Run SonarScanner End
       run: |
