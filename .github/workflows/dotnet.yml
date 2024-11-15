@@ -30,7 +30,7 @@ jobs:
         /k:"MartijnVerhappen_S3DB01-Martijn-Verhappen-Individual-Project" \
         /o:"martijnverhappen" \
         /d:sonar.login="${{ secrets.SONAR_TOKEN }}" \
-        /d:sonar.coverageReportPaths="coverage-report/lcov.info"
+        /d:sonar.coverageReportPaths="coverage-report/coverage-report.xml"
       env:
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
@@ -46,7 +46,7 @@ jobs:
     - name: Generate coverage report with reportgenerator
       run: |
         dotnet tool install --global dotnet-reportgenerator-globaltool --version 5.1.0
-        reportgenerator "-reports:./WebShopAPI/unitTests/TestResults/*.trx" "-targetdir:coverage-report" -reporttypes:lcov
+        reportgenerator "-reports:./WebShopAPI/unitTests/TestResults/*.trx" "-targetdir:coverage-report" -reporttypes:lcov,html,xml
 
     - name: List coverage-report directory
       run: |
