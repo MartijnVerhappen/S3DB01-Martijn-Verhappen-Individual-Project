@@ -29,6 +29,9 @@ jobs:
       run: |
         dotnet tool install --global JetBrains.dotCover.CommandLineTools --version 2024.3.0
 
+    - name: Install SonarScanner
+      run: dotnet tool install --global dotnet-sonarscanner
+
     - name: Verify DotCover Installation
       run: |
         dotnet tool list --global
