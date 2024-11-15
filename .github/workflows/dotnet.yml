@@ -8,7 +8,6 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
@@ -41,20 +40,7 @@ jobs:
           /d:sonar.host.url="https://sonarcloud.io"
       env:
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        
-    - name: Run SonarScanner
-      run: |
-        dotnet-sonarscanner begin \
-          /k:"MartijnVerhappen_S3DB01-Martijn-Verhappen-Individual-Project" \
-          /o:"martijnverhappen" \
-          /d:sonar.login="${{ secrets.SONAR_TOKEN }}" \
-          /d:sonar.host.url="https://sonarcloud.io"
 
-    - name: Verify DotCover Installation
-      run: |
-        dotnet tool list --global
-        ls $HOME/.dotnet/tools
-  
     - name: Run tests with DotCover
       run: dotnet-dotCover dotnet --output=AppCoverageReport.html -- test "WebShopAPI/unitTests/unitTests.csproj"
 
@@ -64,6 +50,11 @@ jobs:
       with:
         name: coverage-report
         path: coverage.html
+
+    - name: Run SonarScanner End
+      run: |
+        dotnet-sonarscanner end \
+          /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
 
     - name: Login to DockerHub
       uses: docker/login-action@v2
