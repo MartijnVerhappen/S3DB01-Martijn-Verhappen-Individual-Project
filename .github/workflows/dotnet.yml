@@ -52,7 +52,7 @@ jobs:
     - name: Generate coverage report with dotCover
       run: |
         dotnet dotCover report \
-        --source="WebShopAPI/unitTests/TestResults/166de774-c3e4-4c36-8858-ebe3d6effd8c/runner_fv-az692-324_2024-11-15.10_37_15.coverage" \
+        --source="WebShopAPI/unitTests/TestResults/**/*/*.coverage" \
         --output=coverage-report.html
 
     - name: Upload Coverage Report
