@@ -43,10 +43,10 @@ jobs:
     - name: Create coverage report directory
       run: mkdir -p coverage-report
 
-    - name: Generate LCOV report with reportgenerator
+    - name: Generate Cobertura report with reportgenerator
       run: |
         dotnet tool install --global dotnet-reportgenerator-globaltool --version 5.1.0
-        reportgenerator "-reports:./WebShopAPI/unitTests/TestResults/*.trx" "-targetdir:coverage-report" -reporttypes:lcov
+        reportgenerator "-reports:./WebShopAPI/unitTests/TestResults/*.trx" "-targetdir:coverage-report" -reporttypes:cobertura
         ls -R coverage-report
 
     - name: List coverage-report directory
