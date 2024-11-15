@@ -21,9 +21,6 @@ jobs:
     - name: Restore dependencies
       run: dotnet restore "WebShopAPI/WebShopAPI.sln"
 
-    - name: Build project
-      run: dotnet build "WebShopAPI/WebShopAPI.sln" --no-restore
-
     - name: Install DotCover Tool
       run: dotnet tool install --global JetBrains.dotCover.CommandLineTools --version 2024.3.0
 
@@ -39,6 +36,9 @@ jobs:
         /d:sonar.coverageReportPaths="WebShopAPI/unitTests/TestResults/**/*.coverage"
       env:
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+
+    - name: Build project
+      run: dotnet build "WebShopAPI/WebShopAPI.sln" --no-restore
 
     - name: Run Tests and Collect Coverage
       run: dotnet test "WebShopAPI/unitTests/unitTests.csproj" --no-build --collect:"Code Coverage" --logger:"trx"
