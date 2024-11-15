@@ -21,9 +21,6 @@ jobs:
     - name: Restore dependencies
       run: dotnet restore "WebShopAPI/WebShopAPI.sln"
 
-    - name: Install DotCover Tool
-      run: dotnet tool install --global JetBrains.dotCover.CommandLineTools --version 2024.3.0
-
     - name: Install SonarScanner
       run: dotnet tool install --global dotnet-sonarscanner
 
@@ -33,7 +30,7 @@ jobs:
         /k:"MartijnVerhappen_S3DB01-Martijn-Verhappen-Individual-Project" \
         /o:"martijnverhappen" \
         /d:sonar.login="${{ secrets.SONAR_TOKEN }}" \
-        /d:sonar.coverageReportPaths="WebShopAPI/unitTests/TestResults/**/*.coverage"
+        /d:sonar.coverageReportPaths="coverage-report/lcov-report.lcov"
       env:
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
@@ -49,7 +46,7 @@ jobs:
     - name: Generate coverage report with reportgenerator
       run: |
         dotnet tool install --global dotnet-reportgenerator-globaltool --version 5.1.0
-        reportgenerator "-reports:./WebShopAPI/unitTests/TestResults/*.trx" "-targetdir:coverage-report"
+        reportgenerator "-reports:./WebShopAPI/unitTests/TestResults/*.trx" "-targetdir:coverage-report" -reporttypes:lcov
 
     - name: Run SonarScanner End
       run: |
