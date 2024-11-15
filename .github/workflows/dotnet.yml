@@ -33,7 +33,8 @@ jobs:
     - name: Run SonarCloud Begin
       run: |
         dotnet-sonarscanner begin \
-        /k:"your_project_key" \
+        /k:"MartijnVerhappen_S3DB01-Martijn-Verhappen-Individual-Project" \
+        /o:"martijnverhappen" \
         /d:sonar.login="${{ secrets.SONAR_TOKEN }}" \
         /d:sonar.coverageReportPaths="WebShopAPI/unitTests/TestResults/**/*.coverage"
       env:
