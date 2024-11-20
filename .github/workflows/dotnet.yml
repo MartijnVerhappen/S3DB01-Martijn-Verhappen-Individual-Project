@@ -73,8 +73,8 @@ jobs:
 
     - name: Build Docker image
       run: |
-        docker build -t ${{ secrets.DOCKER_USERNAME }}/web-shop-api:${{ github.latest }} ./WebShopAPI
+        docker build -t ${{ secrets.DOCKER_USERNAME }}/web-shop-api:latest ./WebShopAPI
 
     - name: Push Docker image to DockerHub
       run: |
-        docker push ${{ secrets.DOCKER_USERNAME }}/web-shop-api:${{ github.latest }}
+        docker push ${{ secrets.DOCKER_USERNAME }}/web-shop-api:latest
