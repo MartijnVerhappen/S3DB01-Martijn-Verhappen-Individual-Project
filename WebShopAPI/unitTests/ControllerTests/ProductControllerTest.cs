@@ -28,7 +28,7 @@ namespace unitTests.ControllerTests
                         .UseInMemoryDatabase(databaseName: Guid.NewGuid().ToString())
                         .Options;
 
-            using (var context = new DBContext(_options))
+            using (DBContext context = new DBContext(_options))
             {
                 context.Database.EnsureCreated();
             }
@@ -53,9 +53,9 @@ namespace unitTests.ControllerTests
             {
                 await SeedDatabase(context);
 
-                var repository = new ProductRepository(context);
-                var service = new ProductService(repository);
-                var controller = new ProductController(service);
+                ProductRepository repository = new ProductRepository(context);
+                ProductService service = new ProductService(repository);
+                ProductController controller = new ProductController(service);
 
                 // Act
                 var result = await controller.GetAllProducts();

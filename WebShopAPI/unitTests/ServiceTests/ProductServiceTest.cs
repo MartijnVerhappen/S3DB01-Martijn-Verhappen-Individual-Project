@@ -71,7 +71,7 @@ namespace unitTests.ServiceTests
                 await SeedDatabase(context);
 
                 // Act
-                var result = await _service.UpdateProduct(1, updatedProduct);
+                ProductModel result = await _service.UpdateProduct(1, updatedProduct);
 
                 // Assert
                 Assert.NotNull(result);

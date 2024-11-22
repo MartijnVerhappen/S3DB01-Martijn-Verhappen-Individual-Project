@@ -22,7 +22,7 @@ describe("App Component", () => {
       ],
     });
 
-    render(<App />);
+    render(<App/>);
     // Check if products are displayed
     await waitFor(() => {
       expect(screen.getByText(/Monster Hunter World/i)).toBeInTheDocument();
