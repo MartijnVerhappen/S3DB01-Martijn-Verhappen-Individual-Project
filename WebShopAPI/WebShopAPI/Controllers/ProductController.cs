@@ -17,9 +17,9 @@ namespace Web_Shop_API.Controllers
         }
 
         [HttpGet(Name = "GetAllProducts")]
-        public Task<List<ProductModel>> GetAllProducts()
+        public async Task<List<ProductModel>> GetAllProducts()
         {
-            return _productService.GetAllProducts();
+            return await _productService.GetAllProducts();
         }
 
         [HttpGet("{id:int}")]

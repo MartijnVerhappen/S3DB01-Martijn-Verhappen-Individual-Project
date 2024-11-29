@@ -6,9 +6,9 @@ using Microsoft.EntityFrameworkCore;
 using Core.IServices;
 using Logic.Services;
 
-var AllowTauriOrigin = "AllowTauriOrigin";
+string AllowTauriOrigin = "AllowTauriOrigin";
 
-var builder = WebApplication.CreateBuilder(args);
+WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllersWithViews();
 
@@ -19,7 +19,7 @@ builder.Services.AddCors(options =>
                       {
                           policy.WithOrigins("http://localhost", "http://127.0.0.1", "http://localhost:1420")
                                 .AllowAnyHeader()
-                                .AllowAnyMethod();  // Allow specific HTTP methods like GET, POST, etc.
+                                .AllowAnyMethod();
                       });
 });
 

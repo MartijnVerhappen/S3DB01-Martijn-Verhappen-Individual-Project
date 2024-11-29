@@ -1,0 +1,25 @@
+services:
+    backend:
+        build:
+            context: ./ShopAPI
+            dockerfile: Dockerfile.dev
+        ports:
+            - 5000:5000
+        networks:
+            - web_shop_network_staging
+        depends_on: [db]
+        environment:
+            - "Server=mysql-container; Port=3306; Database=webshop; User Id=root; Password='Njitram0603';"
+
+    db:
+        build:
+            context: ./Database/
+            image: mysql
+        ports:
+            - 3310:3310
+        networks:
+            - web_shop_network_staging
+         
+networks:
+  webShop:
+  driver: web_shop_network_staging

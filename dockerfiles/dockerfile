@@ -1,0 +1,5 @@
+FROM mysql:8.0
+ENV MYSQL_ROOT_PASSWORD=Njitram0603
+ADD ./Dump20241108/webshop_product.sql /docker-entrypoint-initdb.d/
+ENTRYPOINT ["docker-entrypoint.sh"]
+CMD ["mysqld"]
