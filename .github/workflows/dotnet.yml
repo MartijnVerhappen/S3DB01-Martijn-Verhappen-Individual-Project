@@ -19,7 +19,7 @@ jobs:
         dotnet-version: 8.0.x
 
     - name: Restore dependencies
-      run: dotnet restore "WebShopAPI/WebShopAPI.sln"
+      run: dotnet restore "ShopAPI/ShopAPI.sln"
 
     - name: Install SonarScanner
       run: dotnet tool install --global dotnet-sonarscanner
@@ -35,7 +35,7 @@ jobs:
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
     - name: Build project
-      run: dotnet build "WebShopAPI/WebShopAPI.sln" --no-restore
+      run: dotnet build "ShopAPI/ShopAPI.sln" --no-restore
 
     - name: Cache NuGet packages
       uses: actions/cache@v3
@@ -46,7 +46,7 @@ jobs:
           ${{ runner.os }}-nuget-
 
     - name: Run Tests and Collect Coverage
-      run: dotnet test "WebShopAPI/unitTests/unitTests.csproj" --no-build --collect:"XPlat Code Coverage" --logger:"trx"
+      run: dotnet test "ShopAPI/UnitTests/UnitTests.csproj" --no-build --collect:"XPlat Code Coverage" --logger:"trx"
 
     - name: Create coverage report directory
       run: mkdir -p coverage-report
@@ -54,7 +54,7 @@ jobs:
     - name: Generate coverage report with reportgenerator
       run: |
         dotnet tool install --global dotnet-reportgenerator-globaltool --version 5.1.0
-        reportgenerator "-reports:./WebShopAPI/unitTests/**/coverage.cobertura.xml" "-targetdir:coverage-report" -reporttypes:SonarQube
+        reportgenerator "-reports:./ShopAPI/UnitTests/**/coverage.cobertura.xml" "-targetdir:coverage-report" -reporttypes:SonarQube
         
     - name: List coverage-report directory
       run: |
@@ -73,8 +73,18 @@ jobs:
 
     - name: Build Docker image
       run: |
-        docker build -t ${{ secrets.DOCKER_USERNAME }}/web-shop-api:latest ./WebShopAPI
+        docker build -t ${{ secrets.DOCKER_USERNAME }}/web-shop-api:latest ./ShopAPI
 
     - name: Push Docker image to DockerHub
       run: |
         docker push ${{ secrets.DOCKER_USERNAME }}/web-shop-api:latest
+
+    - name: Deploy with Watchtower
+      run: |
+        docker run -d \
+          --name watchtower \
+          -v /var/run/docker.sock:/var/run/docker.sock \
+          containrrr/watchtower \
+          --interval 300 \
+          --cleanup \
+          ${{ secrets.DOCKER_USERNAME }}/web-shop-api
