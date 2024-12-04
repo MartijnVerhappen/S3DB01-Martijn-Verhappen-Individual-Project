@@ -46,7 +46,7 @@ jobs:
           ${{ runner.os }}-nuget-
 
     - name: Run Tests and Collect Coverage
-      run: dotnet test "ShopAPI/UnitTests/UnitTests.csproj" --no-build --collect:"XPlat Code Coverage" --logger:"trx"
+      run: dotnet test "ShopAPI/Unit tests/UnitTests.csproj" --no-build --collect:"XPlat Code Coverage" --logger:"trx"
 
     - name: Create coverage report directory
       run: mkdir -p coverage-report
@@ -54,7 +54,7 @@ jobs:
     - name: Generate coverage report with reportgenerator
       run: |
         dotnet tool install --global dotnet-reportgenerator-globaltool --version 5.1.0
-        reportgenerator "-reports:./ShopAPI/UnitTests/**/coverage.cobertura.xml" "-targetdir:coverage-report" -reporttypes:SonarQube
+        reportgenerator "-reports:./ShopAPI/Unit tests/**/coverage.cobertura.xml" "-targetdir:coverage-report" -reporttypes:SonarQube
         
     - name: List coverage-report directory
       run: |
