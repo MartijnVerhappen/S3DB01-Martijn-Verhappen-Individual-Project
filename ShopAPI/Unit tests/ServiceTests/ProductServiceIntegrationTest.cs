@@ -6,12 +6,13 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Unit_tests.ServiceTests
 {
-    public class ProductServiceTest
+    [TestClass]
+    public class ProductServiceIntegrationTest
     {
         private ProductService _service;
         private DbContextOptions<DBContext> _options;
 
-        public ProductServiceTest()
+        public ProductServiceIntegrationTest()
         {
             _options = new DbContextOptionsBuilder<DBContext>()
                         .UseInMemoryDatabase(databaseName: Guid.NewGuid().ToString())
@@ -79,11 +80,11 @@ namespace Unit_tests.ServiceTests
             using (var context = new DBContext(_options))
             {
                 await SeedDatabase(context);
-                ProductRepository repository = new ProductRepository(context);
+                ProductService service = new ProductService(new ProductRepository(context));
                 Product updatedProduct = new Product(1, "Videogame", "Monster Hunter World", 60, 10);
 
                 // Act
-                Product result = await repository.UpdateProduct(updatedProduct);
+                Product result = await service.UpdateProduct(updatedProduct);
 
                 // Assert
                 Assert.IsNotNull(result);
@@ -101,15 +102,25 @@ namespace Unit_tests.ServiceTests
             // Arrange
             using (var context = new DBContext(_options))
             {
-                ProductRepository repository = new ProductRepository(context);
-                Product updatedProduct = new Product(1, "Videogame", "Monster Hunter World", 60, 10);
+                await SeedDatabase(context);
+                ProductService service = new ProductService(new ProductRepository(context));
+                int nonExistentProductId = 999;
+                Product updatedProduct = new Product(nonExistentProductId, "Videogame", "Monster Hunter World", 60, 10);
 
                 // Act
-                Product result = await repository.UpdateProduct(updatedProduct);
-
-                // Assert
-                Assert.IsNull(result);
+                try
+                {
+                    await service.UpdateProduct(updatedProduct);
+                    Assert.Fail("Expected an exception to be thrown.");
+                }
+                catch (Exception ex)
+                {
+                    // Assert
+                    Assert.IsInstanceOfType(ex, typeof(Exception));
+                    Assert.AreEqual("Product not found", ex.Message);
+                }
             }
         }
+
     }
 }

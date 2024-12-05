@@ -30,9 +30,19 @@ namespace DAL.Repositories
 
         public async Task<Product> UpdateProduct(Product product)
         {
-            _dbContext.Product.Update(product);
+            var existingProduct = await _dbContext.Product.FindAsync(product.Id);
+            if (existingProduct == null)
+            {
+                return null;
+            }
+
+            existingProduct.ProductType = product.ProductType;
+            existingProduct.ProductNaam = product.ProductNaam;
+            existingProduct.ProductPrijs = product.ProductPrijs;
+            existingProduct.ProductKorting = product.ProductKorting;
+
             await _dbContext.SaveChangesAsync();
-            return product;
+            return existingProduct;
         }
 
         public async Task<Product> AddProduct(Product product)

@@ -24,6 +24,7 @@ namespace Logic.Models
         [Range(0, 100)]
         public int ProductKorting { get; set; }
 
+
         public Product()
         {
         }

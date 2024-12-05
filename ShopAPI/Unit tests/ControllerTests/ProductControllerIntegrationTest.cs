@@ -9,13 +9,14 @@ using ShopAPI.Controllers;
 
 namespace Unit_tests.ControllerTests
 {
-    public class ProductControllerTest
+    [TestClass]
+    public class ProductControllerIntegrationTest
     {
         private readonly ProductController _controller;
         private readonly Mock<IProductService> _mockService;
         private readonly DbContextOptions<DBContext> _options;
 
-        public ProductControllerTest()
+        public ProductControllerIntegrationTest()
         {
             _options = new DbContextOptionsBuilder<DBContext>()
                         .UseInMemoryDatabase(databaseName: Guid.NewGuid().ToString())
@@ -85,21 +86,28 @@ namespace Unit_tests.ControllerTests
             // Arrange
             using (var context = new DBContext(_options))
             {
-                await SeedDatabase(context);
+                // Seed the database with a product
+                var existingProduct = new Product(1, "Videogame", "Monster Hunter World", 60, 10);
+                context.Product.Add(existingProduct);
+                await context.SaveChangesAsync();
 
                 var repository = new ProductRepository(context);
                 var service = new ProductService(repository);
                 var controller = new ProductController(service);
 
-                Product updatedProduct = new Product(1, "Videogame", "Monster Hunter World", 60, 10);
+                // Update the existing product
+                Product updatedProduct = new Product(1, "Videogame", "Monster Hunter World", 50, 20);
 
                 // Act
                 Product result = await controller.UpdateProduct(updatedProduct);
 
                 // Assert
                 Assert.IsNotNull(result);
-                Assert.AreEqual(updatedProduct, result);
-                Assert.AreEqual(10, result.ProductKorting);
+                Assert.AreEqual(updatedProduct.Id, result.Id);
+                Assert.AreEqual(updatedProduct.ProductType, result.ProductType);
+                Assert.AreEqual(updatedProduct.ProductNaam, result.ProductNaam);
+                Assert.AreEqual(updatedProduct.ProductPrijs, result.ProductPrijs);
+                Assert.AreEqual(updatedProduct.ProductKorting, result.ProductKorting);
             }
         }
 
@@ -113,14 +121,13 @@ namespace Unit_tests.ControllerTests
                 var service = new ProductService(repository);
                 var controller = new ProductController(service);
 
-                Product updatedProduct = new Product(1, "Videogame", "Monster Hunter World", 60, 10);
+                // Update a non-existent product
+                Product updatedProduct = new Product(1, "Videogame", "Monster Hunter World", 50, 20);
 
-                // Act
-                Product result = await controller.UpdateProduct(updatedProduct);
-
-                // Assert
-                Assert.IsNull(result);
+                // Act and Assert
+                await Assert.ThrowsExceptionAsync<Exception>(async () => await controller.UpdateProduct(updatedProduct));
             }
         }
+
     }
 }

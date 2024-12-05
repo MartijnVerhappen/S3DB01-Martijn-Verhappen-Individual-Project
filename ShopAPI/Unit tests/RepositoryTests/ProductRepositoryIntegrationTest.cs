@@ -8,13 +8,14 @@ using ShopAPI.Controllers;
 
 namespace Unit_tests.RepositoryTests
 {
-    public class ProductRepositoryTest
+    [TestClass]
+    public class ProductRepositoryIntegrationTest
     {
         private readonly ProductController _controller;
         private readonly Mock<IProductService> _mockService;
         private readonly DbContextOptions<DBContext> _options;
 
-        public ProductRepositoryTest()
+        public ProductRepositoryIntegrationTest()
         {
             _options = new DbContextOptionsBuilder<DBContext>()
                         .UseInMemoryDatabase(databaseName: Guid.NewGuid().ToString())
@@ -81,9 +82,12 @@ namespace Unit_tests.RepositoryTests
             // Arrange
             using (var context = new DBContext(_options))
             {
-                await SeedDatabase(context);
+                var existingProduct = new Product(1, "Videogame", "Monster Hunter World", 60, 10);
+                context.Product.Add(existingProduct);
+                await context.SaveChangesAsync();
+
                 ProductRepository repository = new ProductRepository(context);
-                Product updatedProduct = new Product(1, "Videogame", "Monster Hunter World", 60, 10);
+                Product updatedProduct = new Product(1, "Videogame", "Monster Hunter World", 50, 20);
 
                 // Act
                 Product result = await repository.UpdateProduct(updatedProduct);
@@ -93,8 +97,8 @@ namespace Unit_tests.RepositoryTests
                 Assert.AreEqual(1, result.Id);
                 Assert.AreEqual("Videogame", result.ProductType);
                 Assert.AreEqual("Monster Hunter World", result.ProductNaam);
-                Assert.AreEqual(60, result.ProductPrijs);
-                Assert.AreEqual(10, result.ProductKorting);
+                Assert.AreEqual(50, result.ProductPrijs);
+                Assert.AreEqual(20, result.ProductKorting);
             }
         }
 
@@ -105,7 +109,7 @@ namespace Unit_tests.RepositoryTests
             using (var context = new DBContext(_options))
             {
                 ProductRepository repository = new ProductRepository(context);
-                Product updatedProduct = new Product(1, "Videogame", "Monster Hunter World", 60, 10);
+                Product updatedProduct = new Product(1, "Videogame", "Monster Hunter World", 50, 20);
 
                 // Act
                 Product result = await repository.UpdateProduct(updatedProduct);

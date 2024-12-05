@@ -25,7 +25,21 @@ namespace Logic.Services
 
         public async Task<Product> UpdateProduct(Product product)
         {
-            return await _productRepository.UpdateProduct(product);
+            var existingProduct = await _productRepository.GetProductById(product.Id);
+            if (existingProduct == null)
+            {
+                throw new Exception("Product not found");
+            }
+
+            // Apply the changes
+            existingProduct.ProductType = !string.IsNullOrEmpty(product.ProductType) ? product.ProductType : existingProduct.ProductType;
+            existingProduct.ProductNaam = !string.IsNullOrEmpty(product.ProductNaam) ? product.ProductNaam : existingProduct.ProductNaam;
+            existingProduct.ProductPrijs = product.ProductPrijs > 0 ? product.ProductPrijs : existingProduct.ProductPrijs;
+            existingProduct.ProductKorting = product.ProductKorting >= 0 ? product.ProductKorting : existingProduct.ProductKorting;
+
+            await _productRepository.UpdateProduct(existingProduct);
+
+            return existingProduct;
         }
 
         public async Task<Product> AddProduct(Product product)
