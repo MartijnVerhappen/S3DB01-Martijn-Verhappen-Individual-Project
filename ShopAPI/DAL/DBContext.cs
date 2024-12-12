@@ -21,13 +21,8 @@ namespace DAL
 
             modelBuilder.Entity<WinkelmandProduct>()
                 .HasOne(wp => wp.Winkelmand)
-                .WithMany(w => w.WinkelmandProducts)
+                .WithMany(w => w.WinkelmandProduct)
                 .HasForeignKey(wp => wp.WinkelmandsId);
-
-            modelBuilder.Entity<WinkelmandProduct>()
-                .HasOne(wp => wp.Product)
-                .WithMany(p => p.WinkelmandProducts)
-                .HasForeignKey(wp => wp.ProductId);
 
             base.OnModelCreating(modelBuilder);
         }

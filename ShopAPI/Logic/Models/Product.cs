@@ -24,8 +24,6 @@ namespace Logic.Models
         [Range(0, 100)]
         public int ProductKorting { get; set; }
 
-        public ICollection<WinkelmandProduct> WinkelmandProducts { get; set; }
-
         public Product()
         {
         }
