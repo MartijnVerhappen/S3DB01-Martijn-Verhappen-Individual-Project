@@ -1,5 +1,7 @@
 ﻿using DAL;
+using DAL.Entities;
 using DAL.Repositories;
+using Logic.CustomExceptions;
 using Logic.Models;
 using Logic.Services;
 using Microsoft.EntityFrameworkCore;
@@ -30,8 +32,8 @@ namespace Unit_tests.ServiceTests
         private async Task SeedDatabase(DBContext context)
         {
             context.Product.AddRange(
-                new Product(1, "Videogame", "Monster Hunter World", 60, 0),
-                new Product(2, "Videogame", "God of War", 50, 60)
+                new ProductEntity(1, "Videogame", "Monster Hunter World", 60, 0),
+                new ProductEntity(2, "Videogame", "God of War", 50, 60)
             );
             await context.SaveChangesAsync();
         }
@@ -116,8 +118,8 @@ namespace Unit_tests.ServiceTests
                 catch (Exception ex)
                 {
                     // Assert
-                    Assert.IsInstanceOfType(ex, typeof(Exception));
-                    Assert.AreEqual("Product not found", ex.Message);
+                    Assert.IsInstanceOfType(ex, typeof(DomainNotFoundException));
+                    Assert.AreEqual("Failed to get Entity", ex.Message);
                 }
             }
         }

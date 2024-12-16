@@ -24,6 +24,8 @@ namespace Logic.IRepositories
         Task SetMFAFormAsync(int id, string mfaForm);
 
         Task<Winkelmand> GetWinkelmandsAsync(int id);
+
+        Task<Winkelmand> AddProductToWinkelmand(int winkelmandId, int productId);
     }
 
 }

@@ -78,9 +78,9 @@ namespace ShopAPI.Controllers
         }
 
         [HttpGet("{id}/winkelmand")]
-        public async Task<ActionResult<Winkelmand>> GetKlantWinkelmand(int id)
+        public async Task<ActionResult<Winkelmand>> GetKlantWinkelmand(int winkelmandId)
         {
-            var winkelmand = await _klantService.GetKlantWinkelmandsAsync(id);
+            var winkelmand = await _klantService.GetKlantWinkelmandsAsync(winkelmandId);
             if (winkelmand == null)
             {
                 return NotFound();

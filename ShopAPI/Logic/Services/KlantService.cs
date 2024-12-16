@@ -33,7 +33,6 @@ namespace Logic.Services
             return await _klantRepository.GetByUsernameAsync(username);
         }
 
-
         public async Task<Klant> UpdateKlantAsync(Klant klant)
         {
             return await _klantRepository.UpdateAsync(klant);
@@ -54,9 +53,18 @@ namespace Logic.Services
             await _klantRepository.SetMFAFormAsync(id, mfaForm);
         }
 
-        public async Task<Winkelmand> GetKlantWinkelmandsAsync(int id)
+        public async Task<Winkelmand> GetKlantWinkelmandsAsync(int winkelmandId)
         {
-            return await _klantRepository.GetWinkelmandsAsync(id);
+            return await _klantRepository.GetWinkelmandsAsync(winkelmandId);
+        }
+
+        public async Task<Winkelmand> AddProductToWinkelmand(Product product, Winkelmand winkelmand)
+        {
+            winkelmand.Products.Add(product);
+            // opslaan in database
+            _klantRepository.AddProductToWinkelmand(winkelmand.Id, product.Id);
+
+            return winkelmand;
         }
     }
 }

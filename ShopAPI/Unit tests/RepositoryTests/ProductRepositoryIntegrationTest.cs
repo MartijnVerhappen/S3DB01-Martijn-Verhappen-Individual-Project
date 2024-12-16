@@ -1,4 +1,5 @@
 ﻿using DAL;
+using DAL.Entities;
 using DAL.Repositories;
 using Logic.IService;
 using Logic.Models;
@@ -33,8 +34,8 @@ namespace Unit_tests.RepositoryTests
         private async Task SeedDatabase(DBContext context)
         {
             context.Product.AddRange(
-                new Product(1, "Videogame", "Monster Hunter World", 60, 0),
-                new Product(2, "Videogame", "God of War", 50, 60)
+                new ProductEntity(1, "Videogame", "Monster Hunter World", 60, 0),
+                new ProductEntity(2, "Videogame", "God of War", 50, 60)
             );
             await context.SaveChangesAsync();
         }
@@ -82,7 +83,7 @@ namespace Unit_tests.RepositoryTests
             // Arrange
             using (var context = new DBContext(_options))
             {
-                var existingProduct = new Product(1, "Videogame", "Monster Hunter World", 60, 10);
+                ProductEntity existingProduct = new ProductEntity(1, "Videogame", "Monster Hunter World", 60, 10);
                 context.Product.Add(existingProduct);
                 await context.SaveChangesAsync();
 

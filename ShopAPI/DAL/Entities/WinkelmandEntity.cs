@@ -1,20 +1,19 @@
-﻿using System;
+﻿using Logic.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Logic.Models
+namespace DAL.Entities
 {
-    public class Winkelmand
+    public class WinkelmandEntity
     {
         public int Id { get; set; }
         public int KlantId { get; set; }
         public Klant Klant { get; set; }
         public DateTime AanmaakDatum { get; set; }
         public DateTime LaatsteVeranderingsDatum { get; set; }
-        public ICollection<Product> Products { get; set; }
+        public ICollection<ProductEntity> Products { get; set; }
     }
-
-
 }

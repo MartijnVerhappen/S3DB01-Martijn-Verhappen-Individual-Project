@@ -1,4 +1,5 @@
-﻿using Logic.IRepositories;
+﻿using Logic.CustomExceptions;
+using Logic.IRepositories;
 using Logic.IService;
 using Logic.Models;
 using Logic.Services;
@@ -102,7 +103,7 @@ namespace Unit_tests.ServiceTests
                 .ReturnsAsync((Product)null);
 
             // Act and Assert
-            await Assert.ThrowsExceptionAsync<Exception>(async () => await _productService.UpdateProduct(updatedProduct));
+            await Assert.ThrowsExceptionAsync<DomainNotFoundException>(async () => await _productService.UpdateProduct(updatedProduct));
         }
     }
 }

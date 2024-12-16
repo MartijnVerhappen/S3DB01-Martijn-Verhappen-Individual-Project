@@ -1,4 +1,5 @@
-﻿using Logic.IRepositories;
+﻿using Logic.CustomExceptions;
+using Logic.IRepositories;
 using Logic.IService;
 using Logic.Models;
 
@@ -25,21 +26,12 @@ namespace Logic.Services
 
         public async Task<Product> UpdateProduct(Product product)
         {
-            var existingProduct = await _productRepository.GetProductById(product.Id);
-            if (existingProduct == null)
+            var updatedProduct = await _productRepository.UpdateProduct(product);
+            if(updatedProduct == null)
             {
-                throw new Exception("Product not found");
+                throw new DomainNotFoundException();
             }
-
-            // Apply the changes
-            existingProduct.ProductType = !string.IsNullOrEmpty(product.ProductType) ? product.ProductType : existingProduct.ProductType;
-            existingProduct.ProductNaam = !string.IsNullOrEmpty(product.ProductNaam) ? product.ProductNaam : existingProduct.ProductNaam;
-            existingProduct.ProductPrijs = product.ProductPrijs > 0 ? product.ProductPrijs : existingProduct.ProductPrijs;
-            existingProduct.ProductKorting = product.ProductKorting >= 0 && product.ProductKorting <= 100 ? product.ProductKorting : existingProduct.ProductKorting;
-
-            await _productRepository.UpdateProduct(existingProduct);
-
-            return existingProduct;
+            return await _productRepository.UpdateProduct(product);
         }
 
         public async Task<Product> AddProduct(Product product)

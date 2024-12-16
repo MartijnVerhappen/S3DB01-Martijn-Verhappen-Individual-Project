@@ -1,4 +1,7 @@
-﻿using Logic.IRepositories;
+﻿using DAL.Entities;
+using DAL.Mapping;
+using Logic.CustomExceptions;
+using Logic.IRepositories;
 using Logic.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -20,34 +23,37 @@ namespace DAL.Repositories
 
         public async Task<List<Product>> GetAllProducts()
         {
-            return await _dbContext.Product.ToListAsync();
+            List<ProductEntity> productEntityList = await _dbContext.Product.ToListAsync();
+            ICollection<Product> products = ProductMapping.MapTo(productEntityList);
+            return products.ToList();
         }
 
         public async Task<Product> GetProductById(int id)
         {
-            return await _dbContext.Product.FindAsync(id);
+            ProductEntity productEntity = await _dbContext.Product.FindAsync(id);
+            Product product = ProductMapping.MapTo(productEntity);
+            return product;
         }
 
         public async Task<Product> UpdateProduct(Product product)
         {
-            var existingProduct = await _dbContext.Product.FindAsync(product.Id);
+            ProductEntity existingProduct = await _dbContext.Product.FindAsync(product.Id);
             if (existingProduct == null)
             {
                 return null;
             }
 
-            existingProduct.ProductType = product.ProductType;
-            existingProduct.ProductNaam = product.ProductNaam;
-            existingProduct.ProductPrijs = product.ProductPrijs;
-            existingProduct.ProductKorting = product.ProductKorting;
+            existingProduct = ProductMapping.MapTo(product, existingProduct);
 
             await _dbContext.SaveChangesAsync();
-            return existingProduct;
+            
+            return ProductMapping.MapTo(existingProduct);
         }
 
         public async Task<Product> AddProduct(Product product)
         {
-            _dbContext.Product.Add(product);
+            ProductEntity mappedProduct = ProductMapping.MapTo(product, new ProductEntity());
+            _dbContext.Product.Add(mappedProduct);
             await _dbContext.SaveChangesAsync();
             return product;
         }

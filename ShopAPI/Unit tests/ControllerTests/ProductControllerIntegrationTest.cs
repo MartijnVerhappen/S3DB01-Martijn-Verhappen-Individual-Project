@@ -1,5 +1,7 @@
 ﻿using DAL;
+using DAL.Entities;
 using DAL.Repositories;
+using Logic.CustomExceptions;
 using Logic.IService;
 using Logic.Models;
 using Logic.Services;
@@ -34,8 +36,8 @@ namespace Unit_tests.ControllerTests
         private async Task SeedDatabase(DBContext context)
         {
             context.Product.AddRange(
-                new Product(1, "Videogame", "Monster Hunter World", 60, 0),
-                new Product(2, "Videogame", "God of War", 50, 60)
+                new ProductEntity(1, "Videogame", "Monster Hunter World", 60, 0),
+                new ProductEntity(2, "Videogame", "God of War", 50, 60)
             );
             await context.SaveChangesAsync();
         }
@@ -87,7 +89,7 @@ namespace Unit_tests.ControllerTests
             using (var context = new DBContext(_options))
             {
                 // Seed the database with a product
-                var existingProduct = new Product(1, "Videogame", "Monster Hunter World", 60, 10);
+                ProductEntity existingProduct = new ProductEntity(1, "Videogame", "Monster Hunter World", 60, 10);
                 context.Product.Add(existingProduct);
                 await context.SaveChangesAsync();
 
@@ -125,7 +127,7 @@ namespace Unit_tests.ControllerTests
                 Product updatedProduct = new Product(1, "Videogame", "Monster Hunter World", 50, 20);
 
                 // Act and Assert
-                await Assert.ThrowsExceptionAsync<Exception>(async () => await controller.UpdateProduct(updatedProduct));
+                await Assert.ThrowsExceptionAsync<DomainNotFoundException>(async () => await controller.UpdateProduct(updatedProduct));
             }
         }
 

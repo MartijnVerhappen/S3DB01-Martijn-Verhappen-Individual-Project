@@ -1,4 +1,6 @@
-﻿using Logic.IRepositories;
+﻿using DAL.Entities;
+using DAL.Mapping;
+using Logic.IRepositories;
 using Logic.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -20,28 +22,30 @@ namespace DAL.Repositories
 
         public async Task<Klant> CreateAsync(Klant klant)
         {
-            _dbContext.Klant.Add(klant);
+            _dbContext.Klant.Add(KlantMapping.MapTo(klant));
             await _dbContext.SaveChangesAsync();
             return klant;
         }
 
         public async Task<Klant> GetByIdAsync(int id)
         {
-            return await _dbContext.Klant
+            KlantEntity klant = await _dbContext.Klant
                 .Include(k => k.Winkelmand)
                 .FirstOrDefaultAsync(k => k.Id == id);
+            return KlantMapping.MapTo(klant);
         }
 
         public async Task<Klant> GetByUsernameAsync(string username)
         {
-            return await _dbContext.Klant
+            KlantEntity klant = await _dbContext.Klant
                 .Include(k => k.Winkelmand)
                 .FirstOrDefaultAsync(k => k.Gebruikersnaam == username);
+            return KlantMapping.MapTo(klant);
         }
 
         public async Task<Klant> UpdateAsync(Klant klant)
         {
-            _dbContext.Klant.Update(klant);
+            _dbContext.Klant.Update(KlantMapping.MapTo(klant));
             await _dbContext.SaveChangesAsync();
             return klant;
         }
@@ -69,10 +73,24 @@ namespace DAL.Repositories
 
         public async Task<Winkelmand> GetWinkelmandsAsync(int id)
         {
-            var klant = await _dbContext.Klant
+            KlantEntity klant = await _dbContext.Klant
                 .Include(k => k.Winkelmand)
                 .FirstOrDefaultAsync(k => k.Id == id);
-            return klant?.Winkelmand;
+            
+            return WinkelmandMapping.MapTo(klant.Winkelmand);
+        }
+
+        public async Task<Winkelmand> AddProductToWinkelmand(int winkelmandId, int productId)
+        {
+            WinkelmandProductEntity product = new WinkelmandProductEntity
+            {
+                WinkelmandId = winkelmandId,
+                ProductId = productId
+            };
+
+            _dbContext.WinkelmandProductEntitie.Update(product);
+            await _dbContext.SaveChangesAsync();
+            return await GetWinkelmandsAsync(winkelmandId);
         }
     }
 }
