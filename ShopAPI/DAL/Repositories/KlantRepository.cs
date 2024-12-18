@@ -32,6 +32,10 @@ namespace DAL.Repositories
             KlantEntity klant = await _dbContext.Klant
                 .Include(k => k.Winkelmand)
                 .FirstOrDefaultAsync(k => k.Id == id);
+            if (klant == null)
+            {
+                return null;
+            }
             return KlantMapping.MapTo(klant);
         }
 
@@ -76,21 +80,28 @@ namespace DAL.Repositories
             KlantEntity klant = await _dbContext.Klant
                 .Include(k => k.Winkelmand)
                 .FirstOrDefaultAsync(k => k.Id == id);
-            
+
             return WinkelmandMapping.MapTo(klant.Winkelmand);
         }
 
         public async Task<Winkelmand> AddProductToWinkelmand(int winkelmandId, int productId)
         {
-            WinkelmandProductEntity product = new WinkelmandProductEntity
-            {
-                WinkelmandId = winkelmandId,
-                ProductId = productId
-            };
+            var winkelmandEntity = await _dbContext.Winkelmand
+                .Include(w => w.Products)
+                .FirstOrDefaultAsync(w => w.Id == winkelmandId);
 
-            _dbContext.WinkelmandProductEntitie.Update(product);
-            await _dbContext.SaveChangesAsync();
-            return await GetWinkelmandsAsync(winkelmandId);
+            if (winkelmandEntity != null)
+            {
+                var productEntity = await _dbContext.Product.FindAsync(productId);
+                if (productEntity != null)
+                {
+                    winkelmandEntity.Products.Add(productEntity);
+                    await _dbContext.SaveChangesAsync();
+                    return WinkelmandMapping.MapTo(winkelmandEntity);
+                }
+            }
+
+            return null;
         }
     }
 }

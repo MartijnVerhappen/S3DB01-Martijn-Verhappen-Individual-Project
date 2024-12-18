@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Logic.IRepositories;
+using Logic.CustomExceptions;
 
 namespace Logic.Services
 {
@@ -25,7 +26,12 @@ namespace Logic.Services
 
         public async Task<Klant> GetKlantByIdAsync(int id)
         {
-            return await _klantRepository.GetByIdAsync(id);
+            var klant = await _klantRepository.GetByIdAsync(id);
+            if (klant == null)
+            {
+                throw new DomainNotFoundException();
+            }
+            return klant;
         }
 
         public async Task<Klant> GetKlantByUsernameAsync(string username)
