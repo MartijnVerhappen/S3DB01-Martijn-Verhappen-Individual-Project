@@ -11,29 +11,56 @@ namespace DAL.Mapping
 {
     public class WinkelmandMapping
     {
-        public static Winkelmand MapTo(WinkelmandEntity winkelmandEntity)
+        public static Winkelmand MapTo(WinkelmandEntity winkelmandEntity, Klant klant)
         {
-            Winkelmand winkelmand = new Winkelmand
+            var winkelmandProducts = winkelmandEntity.WinkelmandProducts.Select(wp => new WinkelmandProduct
             {
-                Id = winkelmandEntity.Klant.Winkelmand.Id,
-                KlantId = winkelmandEntity.Id,
-                AanmaakDatum = winkelmandEntity.Klant.Winkelmand.AanmaakDatum,
-                LaatsteVeranderingsDatum = winkelmandEntity.Klant.Winkelmand.LaatsteVeranderingsDatum,
-                Products = ProductMapping.MapTo(winkelmandEntity.Products)
+                Id = wp.Id,
+                ProductId = wp.ProductId,
+                aantal = wp.aantal,
+                Product = new Product
+                {
+                    Id = wp.Product.Id,
+                    ProductType = wp.Product.ProductType,
+                    ProductNaam = wp.Product.ProductNaam,
+                    ProductPrijs = wp.Product.ProductPrijs,
+                    ProductKorting = wp.Product.ProductKorting
+                }
+            }).ToList();
+
+            var winkelmand = new Winkelmand
+            {
+                Id = winkelmandEntity.Id,
+                KlantId = klant.Id,
+                AanmaakDatum = winkelmandEntity.AanmaakDatum,
+                LaatsteVeranderingsDatum = winkelmandEntity.LaatsteVeranderingsDatum,
+                WinkelmandProducts = winkelmandProducts
             };
+
             return winkelmand;
         }
 
         public static WinkelmandEntity MapTo(Winkelmand winkelmand)
         {
-            WinkelmandEntity winkelmandEntity = new WinkelmandEntity
+            var winkelmandProducts = winkelmand.WinkelmandProducts.Select(wp => new WinkelmandProductEntity
+            {
+                Id = wp.Id,
+                WinkelmandId = winkelmand.Id,
+                ProductId = wp.ProductId,
+                Product = ProductMapping.MapTo(wp.Product),
+                aantal = wp.aantal
+            }).ToList();
+
+            var winkelmandEntity = new WinkelmandEntity
             {
                 Id = winkelmand.Id,
                 KlantId = winkelmand.KlantId,
+                Klant = new Klant { Id = winkelmand.KlantId },
                 AanmaakDatum = winkelmand.AanmaakDatum,
                 LaatsteVeranderingsDatum = winkelmand.LaatsteVeranderingsDatum,
-                Products = ProductMapping.MapTo(winkelmand.Products)
+                WinkelmandProducts = winkelmandProducts
             };
+
             return winkelmandEntity;
         }
     }

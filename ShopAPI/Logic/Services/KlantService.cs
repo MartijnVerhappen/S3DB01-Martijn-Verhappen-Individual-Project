@@ -64,11 +64,11 @@ namespace Logic.Services
             return await _klantRepository.GetWinkelmandsAsync(winkelmandId);
         }
 
-        public async Task<Winkelmand> AddProductToWinkelmand(Product product, Winkelmand winkelmand)
+        public async Task<Winkelmand> AddProductToWinkelmand(WinkelmandProduct product, Winkelmand winkelmand, Klant klant)
         {
-            winkelmand.Products.Add(product);
+            winkelmand.WinkelmandProducts.Add(product);
             // opslaan in database
-            _klantRepository.AddProductToWinkelmand(winkelmand.Id, product.Id);
+            _klantRepository.AddProductToWinkelmand(winkelmand.Id, product.Id, klant);
 
             return winkelmand;
         }

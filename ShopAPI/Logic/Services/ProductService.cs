@@ -27,11 +27,11 @@ namespace Logic.Services
         public async Task<Product> UpdateProduct(Product product)
         {
             var updatedProduct = await _productRepository.UpdateProduct(product);
-            if(updatedProduct == null)
+            if (updatedProduct == null)
             {
                 throw new DomainNotFoundException();
             }
-            return await _productRepository.UpdateProduct(product);
+            return updatedProduct;
         }
 
         public async Task<Product> AddProduct(Product product)

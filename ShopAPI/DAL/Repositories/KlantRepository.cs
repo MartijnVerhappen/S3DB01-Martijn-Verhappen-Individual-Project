@@ -49,9 +49,19 @@ namespace DAL.Repositories
 
         public async Task<Klant> UpdateAsync(Klant klant)
         {
-            _dbContext.Klant.Update(KlantMapping.MapTo(klant));
-            await _dbContext.SaveChangesAsync();
-            return klant;
+            var existingEntity = await _dbContext.Klant.FindAsync(klant.Id);
+            if (existingEntity != null)
+            {
+                // Update properties
+                existingEntity.Gebruikersnaam = klant.Gebruikersnaam;
+                existingEntity.MFAStatus = klant.MFAStatus;
+                existingEntity.MFAVorm = klant.MFAVorm;
+
+                await _dbContext.SaveChangesAsync();
+                return KlantMapping.MapTo(existingEntity);
+            }
+
+            throw new KeyNotFoundException("Klant not found");
         }
 
         public async Task DeleteAsync(int id)
@@ -80,24 +90,45 @@ namespace DAL.Repositories
             KlantEntity klant = await _dbContext.Klant
                 .Include(k => k.Winkelmand)
                 .FirstOrDefaultAsync(k => k.Id == id);
+            Klant klantModel = KlantMapping.MapTo(klant);
 
-            return WinkelmandMapping.MapTo(klant.Winkelmand);
+            return WinkelmandMapping.MapTo(klant.Winkelmand, klantModel);
         }
 
-        public async Task<Winkelmand> AddProductToWinkelmand(int winkelmandId, int productId)
+        public async Task<Winkelmand> AddProductToWinkelmand(int winkelmandId, int productId, Klant klant)
         {
             var winkelmandEntity = await _dbContext.Winkelmand
-                .Include(w => w.Products)
-                .FirstOrDefaultAsync(w => w.Id == winkelmandId);
+                .Include(w => w.WinkelmandProducts)
+                .ThenInclude(wp => wp.Product)
+                .FirstOrDefaultAsync(w => w.Id == winkelmandId && w.KlantId == klant.Id);
 
             if (winkelmandEntity != null)
             {
                 var productEntity = await _dbContext.Product.FindAsync(productId);
                 if (productEntity != null)
                 {
-                    winkelmandEntity.Products.Add(productEntity);
-                    await _dbContext.SaveChangesAsync();
-                    return WinkelmandMapping.MapTo(winkelmandEntity);
+                    var existingWinkelmandProduct = winkelmandEntity.WinkelmandProducts.FirstOrDefault(wp => wp.ProductId == productId);
+                    if (existingWinkelmandProduct == null)
+                    {
+                        var newWinkelmandProduct = new WinkelmandProductEntity
+                        {
+                            WinkelmandId = winkelmandEntity.Id,
+                            Winkelmand = winkelmandEntity,
+                            ProductId = productEntity.Id,
+                            Product = productEntity,
+                            aantal = 1
+                        };
+                        winkelmandEntity.WinkelmandProducts.Add(newWinkelmandProduct);
+                        await _dbContext.SaveChangesAsync();
+                    }
+                    else
+                    {
+                        existingWinkelmandProduct.aantal++;
+                        await _dbContext.SaveChangesAsync();
+                    }
+
+                    var winkelmandModel = WinkelmandMapping.MapTo(winkelmandEntity, klant);
+                    return winkelmandModel;
                 }
             }
 

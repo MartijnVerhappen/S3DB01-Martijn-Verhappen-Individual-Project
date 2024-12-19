@@ -37,16 +37,16 @@ namespace DAL.Repositories
 
         public async Task<Product> UpdateProduct(Product product)
         {
-            ProductEntity existingProduct = await _dbContext.Product.FindAsync(product.Id);
+            var existingProduct = await _dbContext.Product.FindAsync(product.Id);
             if (existingProduct == null)
             {
                 return null;
             }
 
-            existingProduct = ProductMapping.MapTo(product, existingProduct);
-
+            ProductMapping.MapTo(product, existingProduct);
+            _dbContext.Product.Update(existingProduct);
             await _dbContext.SaveChangesAsync();
-            
+
             return ProductMapping.MapTo(existingProduct);
         }
 

@@ -135,7 +135,7 @@ namespace Unit_tests.ServiceTests
         {
             // Arrange
             var winkelmandId = 1;
-            var winkelmand = new Winkelmand { Id = winkelmandId, Products = new List<Product>() };
+            var winkelmand = new Winkelmand { Id = winkelmandId, WinkelmandProducts = new List<WinkelmandProduct>() };
 
             _mockKlantRepository.Setup(repo => repo.GetWinkelmandsAsync(winkelmandId))
                 .ReturnsAsync(winkelmand);
@@ -152,20 +152,25 @@ namespace Unit_tests.ServiceTests
         {
             // Arrange
             var winkelmandId = 1;
+            var klantId = 1;
             var product = new Product { Id = 1, ProductType = "Type A", ProductNaam = "Product A", ProductPrijs = 10.99, ProductKorting = 20 };
-            var winkelmand = new Winkelmand { Id = winkelmandId, Products = new List<Product>() };
+            var klant = new Klant { Id = klantId };
+            var winkelmandProduct = new WinkelmandProduct { ProductId = product.Id, aantal = 1 };
+            var winkelmand = new Winkelmand { Id = winkelmandId, KlantId = klantId, WinkelmandProducts = new List<WinkelmandProduct>() };
 
-            _mockKlantRepository.Setup(repo => repo.AddProductToWinkelmand(winkelmandId, product.Id))
+            _mockKlantRepository.Setup(repo => repo.AddProductToWinkelmand(winkelmandId, product.Id, klant))
                 .ReturnsAsync(winkelmand);
 
+            var klantService = new KlantService(_mockKlantRepository.Object);
+
             // Act
-            var result = await _klantService.AddProductToWinkelmand(product, winkelmand);
+            var result = await klantService.AddProductToWinkelmand(winkelmandProduct, winkelmand, klant);
 
             // Assert
-            Assert.AreEqual(1, result.Products.Count);
-            Assert.AreEqual(product, result.Products.First());
-            _mockKlantRepository.Verify(repo => repo.AddProductToWinkelmand(winkelmandId, product.Id), Times.Once);
+            Assert.AreEqual(1, result.WinkelmandProducts.Count);
+            var addedWinkelmandProduct = result.WinkelmandProducts.First();
+            Assert.AreEqual(winkelmandProduct.ProductId, addedWinkelmandProduct.ProductId);
+            Assert.AreEqual(winkelmandProduct.aantal, addedWinkelmandProduct.aantal);
         }
-
     }
 }

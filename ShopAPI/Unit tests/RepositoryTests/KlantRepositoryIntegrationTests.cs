@@ -3,7 +3,6 @@ using DAL.Entities;
 using DAL.Repositories;
 using Logic.IService;
 using Logic.Models;
-using Microsoft.AspNetCore.Routing;
 using Microsoft.EntityFrameworkCore;
 using Moq;
 using ShopAPI.Controllers;
@@ -53,48 +52,98 @@ namespace Unit_tests.RepositoryTests
                 ProductKorting = 10
             };
 
-            var winkelmand1 = new WinkelmandEntity
+            var product3 = new ProductEntity
             {
-                Id = 1,
-                KlantId = 1,
-                AanmaakDatum = DateTime.Now,
-                LaatsteVeranderingsDatum = DateTime.Now,
-                Products = new List<ProductEntity> { product1, product2 }
+                Id = 3,
+                ProductType = "Type C",
+                ProductNaam = "Product C",
+                ProductPrijs = 19.99,
+                ProductKorting = 0
             };
 
-            var winkelmand2 = new WinkelmandEntity
+            if (!await context.Product.AnyAsync())
             {
-                Id = 2,
-                KlantId = 2,
-                AanmaakDatum = DateTime.Now,
-                LaatsteVeranderingsDatum = DateTime.Now,
-                Products = new List<ProductEntity> { product1 }
-            };
+                await context.Product.AddRangeAsync(product1, product2, product3);
+                await context.SaveChangesAsync();
+            }
 
-            var klant1 = new KlantEntity
+            var winkelmand1 = await context.Winkelmand.FirstOrDefaultAsync(w => w.Id == 1);
+            if (winkelmand1 == null)
             {
-                Id = 1,
-                Gebruikersnaam = "testuser1",
-                WachtwoordHash = "SuperEchtWachtwoord1",
-                MFAStatus = true,
-                MFAVorm = "Authenticator_app",
-                Winkelmand = winkelmand1
-            };
-
-            var klant2 = new KlantEntity
+                winkelmand1 = new WinkelmandEntity
+                {
+                    Id = 1,
+                    KlantId = 1,
+                    AanmaakDatum = DateTime.Now,
+                    LaatsteVeranderingsDatum = DateTime.Now,
+                    WinkelmandProducts = new List<WinkelmandProductEntity>
             {
-                Id = 2,
-                Gebruikersnaam = "testuser2",
-                WachtwoordHash = "SuperEchtWachtwoord2",
-                MFAStatus = false,
-                MFAVorm = "SMS",
-                Winkelmand = winkelmand2
-            };
+                new WinkelmandProductEntity
+                {
+                    ProductId = product1.Id,
+                    Product = product1,
+                    aantal = 2
+                },
+                new WinkelmandProductEntity
+                {
+                    ProductId = product2.Id,
+                    Product = product2,
+                    aantal = 1
+                }
+            }
+                };
+                await context.Winkelmand.AddAsync(winkelmand1);
+            }
 
-            context.Product.AddRange(product1, product2);
-            context.Winkelmand.AddRange(winkelmand1, winkelmand2);
-            context.Klant.AddRange(klant1, klant2);
+            var winkelmand2 = await context.Winkelmand.FirstOrDefaultAsync(w => w.Id == 2);
+            if (winkelmand2 == null)
+            {
+                winkelmand2 = new WinkelmandEntity
+                {
+                    Id = 2,
+                    KlantId = 2,
+                    AanmaakDatum = DateTime.Now,
+                    LaatsteVeranderingsDatum = DateTime.Now,
+                    WinkelmandProducts = new List<WinkelmandProductEntity>
+            {
+                new WinkelmandProductEntity
+                {
+                    ProductId = product1.Id,
+                    Product = product1,
+                    aantal = 1
+                }
+            }
+                };
+                await context.Winkelmand.AddAsync(winkelmand2);
+            }
+
             await context.SaveChangesAsync();
+
+            if (!await context.Klant.AnyAsync())
+            {
+                var klant1 = new KlantEntity
+                {
+                    Id = 1,
+                    Gebruikersnaam = "testuser1",
+                    WachtwoordHash = "SuperEchtWachtwoord1",
+                    MFAStatus = true,
+                    MFAVorm = "Authenticator_app",
+                    Winkelmand = winkelmand1
+                };
+
+                var klant2 = new KlantEntity
+                {
+                    Id = 2,
+                    Gebruikersnaam = "testuser2",
+                    WachtwoordHash = "SuperEchtWachtwoord2",
+                    MFAStatus = false,
+                    MFAVorm = "SMS",
+                    Winkelmand = winkelmand2
+                };
+
+                await context.Klant.AddRangeAsync(klant1, klant2);
+                await context.SaveChangesAsync();
+            }
         }
 
         [TestMethod]
@@ -253,7 +302,7 @@ namespace Unit_tests.RepositoryTests
 
                 // Assert
                 Assert.IsNotNull(result);
-                Assert.AreEqual(2, result.Products.Count);
+                Assert.AreEqual(2, result.WinkelmandProducts.Count);
                 Assert.AreEqual(1, result.Id);
                 Assert.AreEqual(1, result.KlantId);
             }
@@ -267,18 +316,20 @@ namespace Unit_tests.RepositoryTests
             {
                 await SeedDatabase(context);
                 KlantRepository repository = new KlantRepository(context);
-                var winkelmandId = 1;
-                var productId = 2;
+                int winkelmandId = 2;
+                int productId = 3;
+                int klantId = 2;
+                Klant klant = await repository.GetByIdAsync(klantId);
 
                 // Act
-                var result = await repository.AddProductToWinkelmand(winkelmandId, productId);
+                Winkelmand result = await repository.AddProductToWinkelmand(winkelmandId, productId, klant);
 
                 // Assert
                 Assert.IsNotNull(result);
-                Assert.AreEqual(3, result.Products.Count);
-                Assert.AreEqual(1, result.Id);
-                Assert.AreEqual(1, result.KlantId);
-                Assert.IsTrue(result.Products.Any(p => p.Id == 3));
+                Assert.AreEqual(2, result.WinkelmandProducts.Count);
+                Assert.AreEqual(winkelmandId, result.Id);
+                Assert.AreEqual(klant.Id, result.KlantId);
+                Assert.IsTrue(result.WinkelmandProducts.Any(p => p.ProductId == productId));
             }
         }
     }

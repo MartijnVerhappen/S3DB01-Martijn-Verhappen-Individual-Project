@@ -24,6 +24,6 @@ namespace Logic.IService
         Task SetMFAFormAsync(int id, string mfaForm);
 
         Task<Winkelmand> GetKlantWinkelmandsAsync(int id);
-        Task<Winkelmand> AddProductToWinkelmand(Product product, Winkelmand winkelmand);
+        Task<Winkelmand> AddProductToWinkelmand(WinkelmandProduct product, Winkelmand winkelmand, Klant klant);
     }
 }

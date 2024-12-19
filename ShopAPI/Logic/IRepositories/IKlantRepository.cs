@@ -25,7 +25,7 @@ namespace Logic.IRepositories
 
         Task<Winkelmand> GetWinkelmandsAsync(int id);
 
-        Task<Winkelmand> AddProductToWinkelmand(int winkelmandId, int productId);
+        Task<Winkelmand> AddProductToWinkelmand(int winkelmandId, int productId, Klant klant);
     }
 
 }

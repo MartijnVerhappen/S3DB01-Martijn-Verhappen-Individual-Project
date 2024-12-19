@@ -19,7 +19,7 @@ namespace DAL.Mapping
             List<ProductEntity> productEntityList = new List<ProductEntity>();
             foreach (Product product in products)
             {
-                productEntityList.Add(MapTo(product, new ProductEntity()));
+                productEntityList.Add(MapTo(product));
             }
             return productEntityList;
         }
@@ -35,6 +35,19 @@ namespace DAL.Mapping
                 ProductKorting = productEntity.ProductKorting
             };
             return product;
+        }
+
+        public static ProductEntity MapTo(Product product)
+        {
+            ProductEntity productEntity = new ProductEntity
+            {
+                Id = product.Id,
+                ProductType = product.ProductType,
+                ProductNaam = product.ProductNaam,
+                ProductPrijs = product.ProductPrijs,
+                ProductKorting = product.ProductKorting
+            };
+            return productEntity;
         }
 
         public static ProductEntity MapTo(Product product, ProductEntity productEntity)
