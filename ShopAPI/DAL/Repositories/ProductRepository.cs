@@ -24,7 +24,9 @@ namespace DAL.Repositories
         public async Task<List<Product>> GetAllProducts()
         {
             List<ProductEntity> productEntityList = await _dbContext.Product.ToListAsync();
+            Console.WriteLine("Fetching products from repository...");
             ICollection<Product> products = ProductMapping.MapTo(productEntityList);
+            Console.WriteLine($"Fetched {products.Count} products.");
             return products.ToList();
         }
 

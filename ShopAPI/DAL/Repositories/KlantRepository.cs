@@ -1,5 +1,6 @@
 ﻿using DAL.Entities;
 using DAL.Mapping;
+using Logic.CustomExceptions;
 using Logic.IRepositories;
 using Logic.Models;
 using Microsoft.EntityFrameworkCore;
@@ -44,6 +45,10 @@ namespace DAL.Repositories
             KlantEntity klant = await _dbContext.Klant
                 .Include(k => k.Winkelmand)
                 .FirstOrDefaultAsync(k => k.Gebruikersnaam == username);
+            if (klant == null)
+            {
+                return null;
+            }
             return KlantMapping.MapTo(klant);
         }
 
@@ -74,6 +79,11 @@ namespace DAL.Repositories
         public async Task SetMFAStatusAsync(int id, bool mfaStatus)
         {
             var klant = await _dbContext.Klant.FindAsync(id);
+            if (klant == null)
+            {
+                throw new DomainNotFoundException();
+            }
+
             klant.MFAStatus = mfaStatus;
             await _dbContext.SaveChangesAsync();
         }
@@ -88,8 +98,16 @@ namespace DAL.Repositories
         public async Task<Winkelmand> GetWinkelmandsAsync(int id)
         {
             KlantEntity klant = await _dbContext.Klant
-                .Include(k => k.Winkelmand)
-                .FirstOrDefaultAsync(k => k.Id == id);
+            .Include(k => k.Winkelmand)
+                .ThenInclude(w => w.WinkelmandProducts)
+                    .ThenInclude(wp => wp.Product)
+            .FirstOrDefaultAsync(k => k.Id == id);
+
+            if (klant == null)
+            {
+                return null;
+            }
+
             Klant klantModel = KlantMapping.MapTo(klant);
 
             return WinkelmandMapping.MapTo(klant.Winkelmand, klantModel);

@@ -11,7 +11,7 @@ namespace DAL.Entities
     {
         public int Id { get; set; }
         public int KlantId { get; set; }
-        public Klant Klant { get; set; }
+        public KlantEntity Klant { get; set; }
         public DateTime AanmaakDatum { get; set; }
         public DateTime LaatsteVeranderingsDatum { get; set; }
         public ICollection<WinkelmandProductEntity> WinkelmandProducts { get; set; }

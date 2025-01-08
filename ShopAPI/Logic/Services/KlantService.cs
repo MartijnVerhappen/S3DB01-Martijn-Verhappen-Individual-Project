@@ -36,7 +36,12 @@ namespace Logic.Services
 
         public async Task<Klant> GetKlantByUsernameAsync(string username)
         {
-            return await _klantRepository.GetByUsernameAsync(username);
+            var klant = await _klantRepository.GetByUsernameAsync(username);
+            if(klant == null)
+            {
+                throw new DomainNotFoundException();
+            }
+            return klant;
         }
 
         public async Task<Klant> UpdateKlantAsync(Klant klant)
@@ -51,7 +56,14 @@ namespace Logic.Services
 
         public async Task SetMFAStatusAsync(int id, bool mfaStatus)
         {
-            await _klantRepository.SetMFAStatusAsync(id, mfaStatus);
+            try
+            {
+                await _klantRepository.SetMFAStatusAsync(id, mfaStatus);
+            }
+            catch (DomainNotFoundException)
+            {
+                throw;
+            }
         }
 
         public async Task SetMFAFormAsync(int id, string mfaForm)
@@ -59,9 +71,14 @@ namespace Logic.Services
             await _klantRepository.SetMFAFormAsync(id, mfaForm);
         }
 
-        public async Task<Winkelmand> GetKlantWinkelmandsAsync(int winkelmandId)
+        public async Task<Winkelmand> GetKlantWinkelmandsAsync(int klantId)
         {
-            return await _klantRepository.GetWinkelmandsAsync(winkelmandId);
+            Winkelmand winkelmand = await _klantRepository.GetWinkelmandsAsync(klantId);
+            if(winkelmand == null)
+            {
+                throw new DomainNotFoundException();
+            }
+            return winkelmand;
         }
 
         public async Task<Winkelmand> AddProductToWinkelmand(WinkelmandProduct product, Winkelmand winkelmand, Klant klant)

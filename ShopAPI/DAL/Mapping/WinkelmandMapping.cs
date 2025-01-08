@@ -55,7 +55,7 @@ namespace DAL.Mapping
             {
                 Id = winkelmand.Id,
                 KlantId = winkelmand.KlantId,
-                Klant = new Klant { Id = winkelmand.KlantId },
+                Klant = new KlantEntity { Id = winkelmand.KlantId },
                 AanmaakDatum = winkelmand.AanmaakDatum,
                 LaatsteVeranderingsDatum = winkelmand.LaatsteVeranderingsDatum,
                 WinkelmandProducts = winkelmandProducts

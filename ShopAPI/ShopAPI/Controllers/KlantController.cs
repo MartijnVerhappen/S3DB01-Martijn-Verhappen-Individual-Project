@@ -16,9 +16,12 @@ namespace ShopAPI.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult<Klant>> CreateKlant(Klant klant)
+        public async Task<IActionResult> CreateKlant([FromBody] Klant newKlant)
         {
-            var createdKlant = await _klantService.CreateKlantAsync(klant);
+            if (newKlant == null)
+                return BadRequest();
+
+            var createdKlant = await _klantService.CreateKlantAsync(newKlant);
             return CreatedAtAction(nameof(GetKlantById), new { id = createdKlant.Id }, createdKlant);
         }
 
@@ -37,7 +40,7 @@ namespace ShopAPI.Controllers
         public async Task<ActionResult<Klant>> GetKlantByUsername(string username)
         {
             var klant = await _klantService.GetKlantByUsernameAsync(username);
-            if (klant == null)
+            if(klant == null)
             {
                 return NotFound();
             }
@@ -59,7 +62,11 @@ namespace ShopAPI.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteKlant(int id)
         {
-            await _klantService.DeleteKlantAsync(id);
+            var klant = await _klantService.GetKlantByIdAsync(id);
+            if (klant == null)
+                return NotFound();
+
+            await _klantService.DeleteKlantAsync(klant.Id);
             return NoContent();
         }
 
@@ -77,15 +84,35 @@ namespace ShopAPI.Controllers
             return NoContent();
         }
 
-        [HttpGet("{id}/winkelmand")]
-        public async Task<ActionResult<Winkelmand>> GetKlantWinkelmand(int winkelmandId)
+        [HttpGet("{klantId}/winkelmand")]
+        public async Task<ActionResult<Winkelmand>> GetKlantWinkelmand([FromRoute] int klantId)
         {
-            var winkelmand = await _klantService.GetKlantWinkelmandsAsync(winkelmandId);
+            Console.WriteLine(klantId);
+            var winkelmand = await _klantService.GetKlantWinkelmandsAsync(klantId);
             if (winkelmand == null)
             {
                 return NotFound();
             }
             return winkelmand;
+        }
+
+        [HttpPost("winkelmand/add")]
+        public async Task<IActionResult> AddProductToWinkelmand([FromBody] WinkelmandProduct product, [FromQuery] int winkelmandId, [FromQuery] int klantId)
+        {
+            var winkelmand = await _klantService.GetKlantWinkelmandsAsync(winkelmandId);
+
+            var klant = await _klantService.GetKlantByIdAsync(klantId);
+
+            var winkelmandProduct = new WinkelmandProduct
+            {
+                ProductId = product.ProductId,
+                aantal = product.aantal,
+                WinkelmandId = winkelmand.Id,
+            };
+
+            var updatedWinkelmand = await _klantService.AddProductToWinkelmand(winkelmandProduct, winkelmand, klant);
+
+            return Ok(updatedWinkelmand);
         }
     }
 }
