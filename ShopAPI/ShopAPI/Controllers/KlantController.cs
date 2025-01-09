@@ -1,6 +1,7 @@
 ﻿using Logic.IService;
 using Logic.Models;
 using Microsoft.AspNetCore.Mvc;
+using ShopAPI.Requests;
 
 namespace ShopAPI.Controllers
 {
@@ -97,22 +98,26 @@ namespace ShopAPI.Controllers
         }
 
         [HttpPost("winkelmand/add")]
-        public async Task<IActionResult> AddProductToWinkelmand([FromBody] WinkelmandProduct product, [FromQuery] int winkelmandId, [FromQuery] int klantId)
+        public async Task<IActionResult> AddProductToWinkelmand([FromBody] ProductRequest productRequest, [FromQuery] int winkelmandId, [FromQuery] int klantId)
         {
-            var winkelmand = await _klantService.GetKlantWinkelmandsAsync(winkelmandId);
+            if (productRequest.product.Id <= 0 || productRequest.product.ProductPrijs <= 0 || productRequest.product.ProductKorting < 0 || productRequest.aantal <= 0)
+            {
+                return BadRequest(new { message = "Invalid product data or quantity." });
+            }
 
+            var winkelmand = await _klantService.GetKlantWinkelmandsAsync(winkelmandId);
             var klant = await _klantService.GetKlantByIdAsync(klantId);
 
             var winkelmandProduct = new WinkelmandProduct
             {
-                ProductId = product.ProductId,
-                aantal = product.aantal,
-                WinkelmandId = winkelmand.Id,
+                ProductId = productRequest.product.Id,
+                aantal = productRequest.aantal
             };
 
             var updatedWinkelmand = await _klantService.AddProductToWinkelmand(winkelmandProduct, winkelmand, klant);
 
             return Ok(updatedWinkelmand);
         }
+
     }
 }

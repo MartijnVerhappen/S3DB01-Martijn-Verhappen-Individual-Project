@@ -84,8 +84,8 @@ namespace Logic.Services
         public async Task<Winkelmand> AddProductToWinkelmand(WinkelmandProduct product, Winkelmand winkelmand, Klant klant)
         {
             winkelmand.WinkelmandProducts.Add(product);
-            // opslaan in database
-            _klantRepository.AddProductToWinkelmand(winkelmand.Id, product.Id, klant);
+
+            await _klantRepository.AddProductToWinkelmand(winkelmand.Id, product.ProductId, klant);
 
             return winkelmand;
         }

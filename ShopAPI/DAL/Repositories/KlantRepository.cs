@@ -123,9 +123,11 @@ namespace DAL.Repositories
             if (winkelmandEntity != null)
             {
                 var productEntity = await _dbContext.Product.FindAsync(productId);
+
                 if (productEntity != null)
                 {
                     var existingWinkelmandProduct = winkelmandEntity.WinkelmandProducts.FirstOrDefault(wp => wp.ProductId == productId);
+
                     if (existingWinkelmandProduct == null)
                     {
                         var newWinkelmandProduct = new WinkelmandProductEntity
@@ -137,13 +139,13 @@ namespace DAL.Repositories
                             aantal = 1
                         };
                         winkelmandEntity.WinkelmandProducts.Add(newWinkelmandProduct);
-                        await _dbContext.SaveChangesAsync();
                     }
                     else
                     {
                         existingWinkelmandProduct.aantal++;
-                        await _dbContext.SaveChangesAsync();
                     }
+
+                    await _dbContext.SaveChangesAsync();
 
                     var winkelmandModel = WinkelmandMapping.MapTo(winkelmandEntity, klant);
                     return winkelmandModel;
@@ -152,5 +154,6 @@ namespace DAL.Repositories
 
             return null;
         }
+
     }
 }

@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Moq;
 using ShopAPI.Controllers;
+using ShopAPI.Requests;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -403,13 +404,21 @@ namespace Unit_tests.ControllerTests
                 var service = new KlantService(new KlantRepository(context));
                 var controller = new KlantController(service);
 
-                var productToAdd = new WinkelmandProduct
+                // Create the ProductRequest with product and quantity
+                var productRequest = new ProductRequest
                 {
-                    ProductId = 1, // Assume product with ID 1 exists
+                    product = new Product
+                    {
+                        Id = 1, // Assume product with ID 1 exists
+                        ProductType = "Electronics",
+                        ProductNaam = "Smartphone",
+                        ProductPrijs = 299.99,
+                        ProductKorting = 10
+                    },
                     aantal = 2
                 };
 
-                var result = await controller.AddProductToWinkelmand(productToAdd, 1, 1); // Assume winkelmandId and klantId are 1
+                var result = await controller.AddProductToWinkelmand(productRequest, 1, 1); // Assume winkelmandId and klantId are 1
 
                 var okResult = result as OkObjectResult;
 
@@ -432,20 +441,28 @@ namespace Unit_tests.ControllerTests
                 var service = new KlantService(new KlantRepository(context));
                 var controller = new KlantController(service);
 
-                var productToAdd = new WinkelmandProduct
+                var productRequest = new ProductRequest
                 {
-                    ProductId = 1,
+                    product = new Product
+                    {
+                        Id = 1,
+                        ProductType = "Electronics",
+                        ProductNaam = "Smartphone",
+                        ProductPrijs = 299.99,
+                        ProductKorting = 10
+                    },
                     aantal = 2
                 };
 
                 var exception = await Assert.ThrowsExceptionAsync<DomainNotFoundException>(async () =>
                 {
-                    await controller.AddProductToWinkelmand(productToAdd, 1, 999);
+                    await controller.AddProductToWinkelmand(productRequest, 1, 999);
                 });
 
                 Assert.AreEqual("Failed to get Entity", exception.Message);
             }
         }
+
 
         [TestMethod]
         public async Task Test_Controller_AddProductToWinkelmand_KlantNotFound()
@@ -457,20 +474,28 @@ namespace Unit_tests.ControllerTests
                 var service = new KlantService(new KlantRepository(context));
                 var controller = new KlantController(service);
 
-                var productToAdd = new WinkelmandProduct
+                var productRequest = new ProductRequest
                 {
-                    ProductId = 1,
+                    product = new Product
+                    {
+                        Id = 1,
+                        ProductType = "Electronics",
+                        ProductNaam = "Smartphone",
+                        ProductPrijs = 299.99,
+                        ProductKorting = 10
+                    },
                     aantal = 2
                 };
 
                 var exception = await Assert.ThrowsExceptionAsync<DomainNotFoundException>(async () =>
                 {
-                    await controller.AddProductToWinkelmand(productToAdd, 1, 999);
+                    await controller.AddProductToWinkelmand(productRequest, 1, 999);
                 });
 
                 Assert.AreEqual("Failed to get Entity", exception.Message);
             }
         }
+
 
         [TestMethod]
         public async Task Test_Controller_AddProductToWinkelmand_InvalidInput()
@@ -482,13 +507,20 @@ namespace Unit_tests.ControllerTests
                 var service = new KlantService(new KlantRepository(context));
                 var controller = new KlantController(service);
 
-                var productToAdd = new WinkelmandProduct
+                var productRequest = new ProductRequest
                 {
-                    ProductId = 0,
+                    product = new Product
+                    {
+                        Id = 0,
+                        ProductType = "Unknown",
+                        ProductNaam = "Invalid Product",
+                        ProductPrijs = 0,
+                        ProductKorting = 0
+                    },
                     aantal = -1
                 };
 
-                var result = await controller.AddProductToWinkelmand(productToAdd, 1, 1);
+                var result = await controller.AddProductToWinkelmand(productRequest, 1, 1);
 
                 Assert.IsInstanceOfType(result, typeof(BadRequestObjectResult));
             }
